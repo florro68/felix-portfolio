@@ -1,29 +1,33 @@
+
 body {
   font-family: Arial, sans-serif;
-  margin: 40px;
+  margin: 0;
   background-color: #f4f4f4;
   color: #333;
 }
-header nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+nav {
+  background-color: #333;
+  color: white;
+  padding: 15px;
   text-align: center;
+  position: sticky;
+  top: 0;
 }
-header nav a {
-  margin: 0 15px;
+nav a {
+  color: white;
   text-decoration: none;
-  color: #333;
+  margin: 0 15px;
 }
 main {
-  margin-top: 80px;
+  padding: 40px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .gallery img {
-  width: 100%;
-  max-width: 400px;
-  margin: 10px;
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #ccc;
 }
