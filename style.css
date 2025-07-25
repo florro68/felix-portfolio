@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+}
+main {
+  margin-top: 80px;
+}
+.gallery img {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+}
