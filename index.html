@@ -57,20 +57,6 @@
     .gallery img:hover {
       transform: scale(1.02);
     }
-    form {
-      margin-top: 20px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-    input[type="submit"] {
-      padding: 10px 20px;
-    }
     #lightbox {
       position: fixed;
       top: 0;
@@ -168,10 +154,17 @@
   <div id="contact" class="section">
     <h2>Contact</h2>
     <p>You can reach me at <strong>felixfloresrodriguezphoto@gmail.com</strong>.</p>
-    <form action="https://buttondown.email/api/emails/embed-subscribe/florrophoto" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/florrophoto', 'popupwindow')" class="embeddable-buttondown-form">
-      <label for="bd-email">Get notes from the field:</label>
-      <input type="email" name="email" id="bd-email" placeholder="Your email" required>
-      <input type="submit" value="Subscribe">
+    <form action="https://buttondown.email/api/emails/embed-subscribe/florrophoto"
+          method="post" target="popupwindow"
+          onsubmit="window.open('https://buttondown.email/florrophoto', 'popupwindow')"
+          class="embeddable-buttondown-form"
+          style="background:#fff; padding:20px; border-radius:8px; max-width:400px; margin:auto; color:#000;">
+      <h3 style="margin-top:0;">Get Notes from the Field</h3>
+      <p style="margin-bottom:10px;">Photography stories, field notes, and reflections. Only the good stuff, straight from Felix.</p>
+      <input type="email" name="email" id="bd-email" placeholder="Your email" required
+             style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc;">
+      <input type="submit" value="Subscribe"
+             style="padding:10px 20px; background:#333; color:#fff; border:none; cursor:pointer;">
     </form>
     <p><a href="https://www.35mmc.com/author/florro68/" target="_blank">Read my articles on 35mmc →</a></p>
   </div>
