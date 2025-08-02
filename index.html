@@ -105,12 +105,11 @@
     <a onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <header onclick="showSection('home')">
-    <h1>Felix I. Flores – Photography Portfolio</h1>
-    <p>Stillness. Presence. Story.</p>
-  </header>
-
   <div id="home" class="section active">
+    <header>
+      <h1>Felix I. Flores – Photography Portfolio</h1>
+      <p>Stillness. Presence. Story.</p>
+    </header>
     <p style="max-width: 800px; margin: 40px auto; padding: 0 20px;">Hello and welcome to my site. I am Felix, a photographer, observer, and storyteller. My work has changed. I no longer just take photos. I create them with purpose, patience, and presence. I have grown in technique, but more importantly, I have learned to see. To slow down. To frame not just what is there, but what it means. Each image now reflects more than a moment. It reflects intent. Stillness. Story. This portfolio marks that shift. It is not just about what I saw. It is about how I chose to show it. This is where my craft became a voice.</p>
   </div>
 
@@ -212,7 +211,10 @@
       document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
       });
-      document.getElementById(id).classList.add('active');
+      const selectedSection = document.getElementById(id);
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
       window.scrollTo(0, 0);
     }
 
