@@ -11,25 +11,24 @@
     .section{margin-top:80px;display:none}
     .section.active{display:block}
 
-    /* HERO uses an EXISTING image path from your repo */
+    /* HERO uses a file in the SAME folder as index.html */
     .hero{
-      background:url('/waterfalls/waterfall5.jpg') center/cover no-repeat;
+      background:url('./hero-home-3200.jpg') center/cover no-repeat;
       min-height:80vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center
     }
     .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-    .hero-content{position:relative;z-index:1}
+    .hero-content{position:relative;z-index:1;padding:0 16px}
     .hero-content h1{font-size:2.2rem;margin:.2rem 0}
     .hero-content p{font-size:1.1rem;margin:.2rem 0}
     .btn{display:inline-block;padding:.7rem 1.2rem;background:rgba(255,255,255,.15);border-radius:6px;color:#fff;text-decoration:none}
     .btn:hover{background:rgba(255,255,255,.25)}
 
-    /* Simple image grid that works with your existing folders */
-    .gallery-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:1100px;margin:10px auto}
-    .gallery-grid img{width:calc(20% - 8px);min-width:180px;height:auto;border-radius:6px;display:block}
     .blog-post{margin:20px auto;max-width:800px;padding:20px;background:#2c2c2c;border-radius:8px;cursor:pointer}
     .blog-post:hover{background:#3a3a3a}
     .blog-post h3{margin-top:0}
     .blog-content{display:none;margin-top:10px}
+    h2{padding:0 20px}
+    p{padding:0 20px;max-width:900px}
   </style>
 </head>
 <body>
@@ -45,7 +44,7 @@
     <a onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <!-- HOME (Hero uses an existing Waterfalls image) -->
+  <!-- HOME (Hero fixed to local file) -->
   <div id="home" class="section active">
     <div class="hero">
       <div class="hero-content">
@@ -56,58 +55,30 @@
     </div>
   </div>
 
-  <!-- GALLERIES (using your real image folders) -->
+  <!-- GALLERIES (text-only placeholders; no images yet to avoid broken paths) -->
   <div id="wildhorses" class="section">
     <h2>Wild Horses</h2>
     <p>Captured in Latvia’s Liellupe Meadows, these images show the raw beauty, tension, and quiet moments of the wild horse herds that roam freely.</p>
-    <div class="gallery-grid">
-      <img src="/wild-horses/wild1.jpg" alt="Wild horse" />
-      <img src="/wild-horses/wild2.jpg" alt="Wild horse" />
-      <img src="/wild-horses/wild3.jpg" alt="Wild horses sparring" />
-      <img src="/wild-horses/wild4.jpg" alt="Wild horse herd" />
-      <img src="/wild-horses/wild5.jpg" alt="Wild horses fighting" />
-    </div>
   </div>
 
   <div id="ukquiet" class="section">
     <h2>UK Quiet</h2>
     <p>Scenes from the North Yorkshire coast and countryside — landscapes of solitude, muted tones, and timeless character.</p>
-    <div class="gallery-grid">
-      <img src="/uk-quiet/uk1.jpg" alt="UK Quiet 1" />
-      <img src="/uk-quiet/uk3.jpg" alt="UK Quiet 3" />
-      <img src="/uk-quiet/uk4.jpg" alt="UK Quiet 4" />
-    </div>
   </div>
 
   <div id="waterfalls" class="section">
     <h2>Waterfalls</h2>
     <p>Detailed and wide perspectives of cascading falls, framed to reveal both movement and stillness.</p>
-    <div class="gallery-grid">
-      <img src="/waterfalls/waterfall1.jpg" alt="Waterfall 1" />
-      <img src="/waterfalls/waterfall2.jpg" alt="Waterfall 2" />
-      <img src="/waterfalls/waterfall4.jpg" alt="Waterfall 4" />
-      <img src="/waterfalls/waterfall5.jpg" alt="Waterfall 5" />
-    </div>
   </div>
 
   <div id="seascapes" class="section">
     <h2>Seascapes</h2>
     <p>From calm horizons to crashing waves, each frame reflects the changing moods of the sea.</p>
-    <div class="gallery-grid">
-      <img src="/seascapes/seascape1.jpg" alt="Seascape 1" />
-      <img src="/seascapes/seascape2.jpg" alt="Seascape 2" />
-      <img src="/seascapes/seascape3.jpg" alt="Seascape 3" />
-      <img src="/seascapes/seascape4.jpg" alt="Seascape 4" />
-    </div>
   </div>
 
   <div id="engure" class="section">
     <h2>Engure Seascape</h2>
     <p>Quiet waters and soft reflections from Engure port.</p>
-    <div class="gallery-grid">
-      <img src="/engure/engure1.jpg" alt="Engure 1" />
-      <img src="/engure/engure2.jpg" alt="Engure 2" />
-    </div>
   </div>
 
   <!-- BLOG -->
@@ -151,7 +122,33 @@
   <!-- NEWSLETTER -->
   <div id="newsletter" class="section">
     <h2>Join My Newsletter</h2>
-    <form action="YOUR-NEWSLETTER-SERVICE-URL" method="post">
-      <label for="email">Email Address</label>
+    <p>Get new photo essays, field notes, and print updates.</p>
+    <form action="YOUR-NEWSLETTER-SERVICE-URL" method="post" style="padding:0 20px">
+      <label for="email">Email Address</label><br>
       <input type="email" id="email" name="EMAIL" placeholder="Your email address" required />
       <input type="hidden" name="NAME" value="Felix I. Flores Rodriguez" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>You can reach me at: <a href="mailto:felixfloresrodriguezphoto@gmail.com">felixfloresrodriguezphoto@gmail.com</a></p>
+  </div>
+
+  <script>
+    function showSection(id){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0,0);
+    }
+    function toggleBlogContent(post){
+      const content=post.querySelector('.blog-content');
+      const open=content.style.display==='block';
+      document.querySelectorAll('.blog-content').forEach(c=>c.style.display='none');
+      if(!open) content.style.display='block';
+    }
+  </script>
+</body>
+</html>
