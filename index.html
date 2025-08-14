@@ -3,76 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Felix Flores Photo</title>
-  <meta name="description" content="Quiet stories in wild horses, UK landscapes, waterfalls, and Baltic seascapes." />
+  <title>Felix Flores Photo — Home</title>
+  <meta name="description" content="Quiet stories, honest frames. Photography by Felix I. Flores." />
   <style>
     :root { --maxw: 1200px; }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; color: #0f172a; background: #fff; }
     header { max-width: var(--maxw); margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
-    header strong { font-size: 20px; }
-    nav a { margin-left: 16px; text-decoration: none; color: inherit; opacity: .9; font-weight: 500; }
-    nav a:hover { opacity: 1; }
-    .hero-wrap { position: relative; height: 52vh; min-height: 360px; }
-    .hero { position: absolute; inset: 0; background: #111 center/cover no-repeat; }
-    .hero-title { position: absolute; left: 16px; bottom: 16px; color: #fff; font-weight: 700; font-size: clamp(24px, 5vw, 48px); text-shadow: 0 2px 24px rgba(0,0,0,.6); }
-    main { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
-    .about { margin: 32px 0; font-size: 18px; line-height: 1.6; color: #334155; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 14px; margin-top: 24px; }
-    .card { display: block; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; }
-    .thumb { width: 100%; height: 160px; object-fit: cover; display: block; }
-    .card h3 { margin: 12px; font-size: 18px; }
-    footer { border-top: 1px solid #e5e7eb; margin-top: 32px; padding: 16px; font-size: 14px; color: #475569; text-align: center; }
+    header a { text-decoration: none; color: inherit; font-weight: 600; }
+    nav a { margin-left: 16px; opacity: .8; }
+    .hero { position: relative; height: 48vh; min-height: 360px; background: #111 center/cover no-repeat; }
+    .hero::after { content: "Quiet Stories. Honest Frames."; position: absolute; inset: auto 0 16px 0; text-align: center; color: #fff; font-weight: 700; font-size: clamp(24px, 5vw, 48px); text-shadow: 0 2px 24px rgba(0,0,0,.6); }
+    main { max-width: var(--maxw); margin: 32px auto; padding: 0 16px 64px; }
+    section { margin-bottom: 48px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+    .grid a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; text-decoration: none; color: inherit; }
+    .grid img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    footer { border-top: 1px solid #e5e7eb; margin-top: 48px; padding: 16px; text-align: center; font-size: 14px; color: #475569; }
   </style>
 </head>
 <body>
   <header>
-  <a href="./">Felix Flores Photo</a>
-  <nav>
-    <a href="./">Home</a>
-    <a href="./galleries/">Galleries</a>
-    <a href="./blog/">Blog</a>
-    <a href="./newsletter/">Newsletter</a>
-    <a href="./contact/">Contact</a>
-  </nav>
-</header>
+    <a href="./">Felix Flores Photo</a>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./galleries/">Galleries</a>
+      <a href="./blog/">Blog</a>
+      <a href="./newsletter/">Newsletter</a>
+      <a href="./contact/">Contact</a>
+    </nav>
+  </header>
 
-  <div class="hero-wrap">
-    <div class="hero" style="background-image:url('./hero-home-3200.jpg');"></div>
-    <div class="hero-title">Quiet Stories. Honest Frames.</div>
-  </div>
+  <section class="hero" style="background-image:url('./hero-home-3200.jpg');"></section>
 
   <main>
-    <section class="about">
+    <section>
       <h2>About Me</h2>
       <p>I'm Felix, a photographer focused on quiet, honest storytelling. My work spans wild horses, UK landscapes, waterfalls, and Baltic seascapes. I shoot with intention, looking for moments that carry stillness, legacy, and truth.</p>
     </section>
 
-    <div class="grid">
-      <a class="card" href="./galleries/wild-horses/">
-        <img class="thumb" src="./galleries/wild-horses/hero.jpg" alt="Wild Horses" />
-        <h3>Wild Horses</h3>
-      </a>
-      <a class="card" href="./galleries/uk-quiet/">
-        <img class="thumb" src="./galleries/uk-quiet/hero.jpg" alt="UK Quiet" />
-        <h3>UK Quiet</h3>
-      </a>
-      <a class="card" href="./galleries/waterfalls/">
-        <img class="thumb" src="./galleries/waterfalls/hero.jpg" alt="Waterfalls" />
-        <h3>Waterfalls</h3>
-      </a>
-      <a class="card" href="./galleries/seascapes/">
-        <img class="thumb" src="./galleries/seascapes/hero.jpg" alt="Seascapes" />
-        <h3>Seascapes</h3>
-      </a>
-      <a class="card" href="./galleries/engure/">
-        <img class="thumb" src="./galleries/engure/hero.jpg" alt="Engure" />
-        <h3>Engure</h3>
-      </a>
-    </div>
+    <section>
+      <h2>Galleries</h2>
+      <div class="grid">
+        <a href="./wild-horses/"><img src="./wild-horses/hero.jpg" alt="Wild Horses" /><div>Wild Horses</div></a>
+        <a href="./uk-quiet/"><img src="./uk-quiet/hero.jpg" alt="UK Quiet" /><div>UK Quiet</div></a>
+        <a href="./waterfalls/"><img src="./waterfalls/hero.jpg" alt="Waterfalls" /><div>Waterfalls</div></a>
+        <a href="./seascapes/"><img src="./seascapes/hero.jpg" alt="Seascapes" /><div>Seascapes</div></a>
+        <a href="./engure/"><img src="./engure/hero.jpg" alt="Engure" /><div>Engure</div></a>
+      </div>
+    </section>
   </main>
 
   <footer>© Felix I. Flores</footer>
 </body>
 </html>
-
