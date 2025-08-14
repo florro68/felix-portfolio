@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wild Horses — Gallery | Felix Flores Photo</title>
+  <meta name="description" content="Wild Horses gallery by Felix Flores — quiet power, territory, and herd life." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <style>
+    :root { --maxw: 1200px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; line-height: 1.5; color: #0f172a; background: #fff; }
+    header { max-width: var(--maxw); margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
+    header a { text-decoration: none; color: inherit; font-weight: 600; }
+    nav a { margin-left: 16px; opacity: .8; }
+    .hero { position: relative; height: 48vh; min-height: 360px; background: #111 center/cover no-repeat; }
+    .hero::after { content: "Wild Horses"; position: absolute; inset: auto 0 16px 0; text-align: center; color: #fff; font-weight: 700; font-size: clamp(24px, 5vw, 48px); text-shadow: 0 2px 24px rgba(0,0,0,.6); }
+    main { max-width: var(--maxw); margin: 32px auto; padding: 0 16px 64px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+    .grid a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
+    .grid img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    footer { border-top: 1px solid #e5e7eb; margin-top: 48px; padding: 16px; text-align: center; font-size: 14px; color: #475569; }
+    .crumbs { font-size: 14px; color: #475569; margin: 8px 0 16px; }
+    .crumbs a { color: inherit; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">Felix Flores Photo</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/galleries/">Galleries</a>
+    </nav>
+  </header>
+
+  <!-- Hero: replace the URL with a strong horizontal image from this set -->
+  <section class="hero" style="background-image:url('./hero.jpg');"></section>
+
+  <main>
+    <div class="crumbs"><a href="/">Home</a> / <a href="/galleries/">Galleries</a> / Wild Horses</div>
+
+    <div class="grid">
+      <!-- Replace filenames with your actual images. You can duplicate/remove items freely. -->
+      <a href="./Z63_2098.jpg" class="glightbox" data-gallery="wh" data-title="Try Me — Clash Prelude"><img src="./Z63_2098.jpg" alt="Rearing stallion" /></a>
+      <a href="./_NZ51752-2.jpg" class="glightbox" data-gallery="wh" data-title="Where the Wild Still Breathes – Plate"><img src="./_NZ51752-2.jpg" alt="Long exposure meadow" /></a>
+      <a href="./_NZ51740.jpg" class="glightbox" data-gallery="wh" data-title="Warm dusk, quiet move"><img src="./_NZ51740.jpg" alt="Dusk movement" /></a>
+      <a href="./Z63_xxxx.jpg" class="glightbox" data-gallery="wh" data-title="Herd at rest"><img src="./Z63_xxxx.jpg" alt="Herd at rest" /></a>
+      <a href="./Z63_yyyy.jpg" class="glightbox" data-gallery="wh" data-title="Watchful eye"><img src="./Z63_yyyy.jpg" alt="Watchful eye" /></a>
+    </div>
+
+    <footer>© Felix I. Flores — Wild Horses</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+  </script>
+</body>
+</html>
