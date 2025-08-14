@@ -1,56 +1,60 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UK Quiet — Gallery | Felix Flores Photo</title>
-  <meta name="description" content="UK Quiet Series — restrained color, solitude, and layered tonal depth." />
+  <title>UK Quiet — Gallery | Felix I. Flores</title>
+  <meta name="description" content="UK Quiet — minimal, calm scenes with solitude and timeless character." />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <style>
-    :root { --maxw: 1200px; }
+    :root { --maxw: 1200px; --fg:#e5e7eb; --muted:#94a3b8; --bg:#0b0f19; --panel:#0e1428; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; line-height: 1.5; color: #0f172a; background: #fff; }
-    header { max-width: var(--maxw); margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
-    header a { text-decoration: none; color: inherit; font-weight: 600; }
-    nav a { margin-left: 16px; opacity: .8; }
-    .hero { position: relative; height: 48vh; min-height: 360px; background: #111 center/cover no-repeat; }
-    .hero::after { content: "UK Quiet"; position: absolute; inset: auto 0 16px 0; text-align: center; color: #fff; font-weight: 700; font-size: clamp(24px, 5vw, 48px); text-shadow: 0 2px 24px rgba(0,0,0,.6); }
-    main { max-width: var(--maxw); margin: 32px auto; padding: 0 16px 64px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-    .grid a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
-    .grid img { width: 100%; height: 220px; object-fit: cover; display: block; }
-    footer { border-top: 1px solid #e5e7eb; margin-top: 48px; padding: 16px; text-align: center; font-size: 14px; color: #475569; }
-    .crumbs { font-size: 14px; color: #475569; margin: 8px 0 16px; }
-    .crumbs a { color: inherit; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; color: var(--fg); background: var(--bg); }
+    header { position: sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(9,12,20,.6); border-bottom:1px solid rgba(148,163,184,.15); }
+    .inner { max-width: var(--maxw); margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+    header a { color: var(--fg); text-decoration: none; margin-right: 16px; }
+    main { max-width: var(--maxw); margin: 24px auto 64px; padding: 0 16px; }
+    h1 { margin: 24px 0 8px; font-size: clamp(24px,4.2vw,40px); }
+    p.muted { color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .grid a { display:block; border:1px solid rgba(148,163,184,.15); border-radius: 12px; overflow: hidden; background: var(--panel); }
+    .grid img { width: 100%; height: 220px; object-fit: cover; display:block; }
+    footer { border-top: 1px solid rgba(148,163,184,.15); margin-top: 40px; padding: 16px; color: var(--muted); font-size: 14px; text-align:center; }
   </style>
 </head>
 <body>
   <header>
-    <a href="/">Felix Flores Photo</a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/galleries/">Galleries</a>
-    </nav>
+    <div class="inner">
+      <div>
+        <a href="../">Home</a>
+        <a href="../#galleries">Galleries</a>
+        <a href="../#blog">Blog</a>
+        <a href="../#newsletter">Newsletter</a>
+        <a href="../#contact">Contact</a>
+      </div>
+      <strong>UK Quiet</strong>
+    </div>
   </header>
 
-  <!-- Hero: swap to a subtle, low-saturation landscape from UK Quiet Series -->
-  <section class="hero" style="background-image:url('./hero.jpg');"></section>
-
   <main>
-    <div class="crumbs"><a href="/">Home</a> / <a href="/galleries/">Galleries</a> / UK Quiet</div>
+    <h1>UK Quiet</h1>
+    <p class="muted">Mist over stone and rail, where time slows and echoes linger longer than voices.</p>
 
     <div class="grid">
-      <a href="./750_3828-2-2.jpg" class="glightbox" data-gallery="ukq" data-title="Sleep and Wait — I"><img src="./750_3828-2-2.jpg" alt="Sleep and Wait I" /></a>
-      <a href="./750_3833-2.jpg" class="glightbox" data-gallery="ukq" data-title="Sleep and Wait — II"><img src="./750_3833-2.jpg" alt="Sleep and Wait II" /></a>
-      <a href="./north-sea-minimal.jpg" class="glightbox" data-gallery="ukq" data-title="North Sea Minimal — UK Quiet Tones"><img src="./north-sea-minimal.jpg" alt="North Sea Minimal" /></a>
-      <a href="./north-sea-minimal-landscape-profile.jpg" class="glightbox" data-gallery="ukq" data-title="UK Quiet Tones — Landscape Profile"><img src="./north-sea-minimal-landscape-profile.jpg" alt="UK Quiet Landscape Profile" /></a>
-      <a href="./bridge-a9.jpg" class="glightbox" data-gallery="ukq" data-title="Bridge over Liellupe — A9"><img src="./bridge-a9.jpg" alt="Bridge over Liellupe" /></a>
+      <a href="./uk1.jpg" class="glightbox" data-gallery="ukq" data-title="UK Quiet — Frame 1"><img src="./uk1.jpg" alt="UK Quiet 1"></a>
+      <a href="./uk2.jpg" class="glightbox" data-gallery="ukq" data-title="UK Quiet — Frame 2"><img src="./uk2.jpg" alt="UK Quiet 2"></a>
+      <a href="./uk3.jpg" class="glightbox" data-gallery="ukq" data-title="UK Quiet — Frame 3"><img src="./uk3.jpg" alt="UK Quiet 3"></a>
+      <a href="./uk4.jpg" class="glightbox" data-gallery="ukq" data-title="UK Quiet — Frame 4"><img src="./uk4.jpg" alt="UK Quiet 4"></a>
+      <a href="./uk5.jpg" class="glightbox" data-gallery="ukq" data-title="UK Quiet — Frame 5"><img src="./uk5.jpg" alt="UK Quiet 5"></a>
     </div>
 
-    <footer>© Felix I. Flores — UK Quiet Series</footer>
+    <footer>© Felix I. Flores — UK Quiet</footer>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script> GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true }); </script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function(){ GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true }); });
+  </script>
 </body>
 </html>
