@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Waterfalls — Gallery | Felix Flores Photo</title>
+  <meta name="description" content="Waterfalls gallery — disciplined compositions, texture-led frames, and controlled motion." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <style>
+    :root { --maxw: 1200px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; line-height: 1.5; color: #0f172a; background: #fff; }
+    header { max-width: var(--maxw); margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
+    header a { text-decoration: none; color: inherit; font-weight: 600; }
+    nav a { margin-left: 16px; opacity: .8; }
+    .hero { position: relative; height: 48vh; min-height: 360px; background: #111 center/cover no-repeat; }
+    .hero::after { content: "Waterfalls"; position: absolute; inset: auto 0 16px 0; text-align: center; color: #fff; font-weight: 700; font-size: clamp(24px, 5vw, 48px); text-shadow: 0 2px 24px rgba(0,0,0,.6); }
+    main { max-width: var(--maxw); margin: 32px auto; padding: 0 16px 64px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+    .grid a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
+    .grid img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    footer { border-top: 1px solid #e5e7eb; margin-top: 48px; padding: 16px; text-align: center; font-size: 14px; color: #475569; }
+    .crumbs { font-size: 14px; color: #475569; margin: 8px 0 16px; }
+    .crumbs a { color: inherit; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">Felix Flores Photo</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/galleries/">Galleries</a>
+    </nav>
+  </header>
+
+  <!-- Hero: Daudas or your chosen waterfall hero frame -->
+  <section class="hero" style="background-image:url('./hero.jpg');"></section>
+
+  <main>
+    <div class="crumbs"><a href="/">Home</a> / <a href="/galleries/">Galleries</a> / Waterfalls</div>
+
+    <div class="grid">
+      <a href="./daudas-log-frame.jpg" class="glightbox" data-gallery="wf" data-title="Pattern Break at Daudas"><img src="./daudas-log-frame.jpg" alt="Daudas pattern break" /></a>
+      <a href="./river-detail-1.jpg" class="glightbox" data-gallery="wf" data-title="Detail, Quiet Flow"><img src="./river-detail-1.jpg" alt="River detail" /></a>
+      <a href="./river-detail-2.jpg" class="glightbox" data-gallery="wf" data-title="Stillness in Motion"><img src="./river-detail-2.jpg" alt="Stillness in Motion" /></a>
+      <a href="./falls-wide.jpg" class="glightbox" data-gallery="wf" data-title="Wide Context"><img src="./falls-wide.jpg" alt="Wide context" /></a>
+      <a href="./falls-portrait.jpg" class="glightbox" data-gallery="wf" data-title="Portrait Study"><img src="./falls-portrait.jpg" alt="Portrait study" /></a>
+    </div>
+
+    <footer>© Felix I. Flores — Waterfalls</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script> GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true }); </script>
+</body>
+</html>
