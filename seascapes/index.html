@@ -3,55 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seascapes — Gallery | Felix Flores Photo</title>
-  <meta name="description" content="Seascapes — Baltic stillness, disciplined tones, and minimal lines." />
+  <title>Seascapes — Gallery | Felix I. Flores</title>
+  <meta name="description" content="Seascapes — waiting for tide, wind, and light to speak in the same voice." />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <style>
-    :root { --maxw: 1200px; }
+    :root { --maxw: 1200px; --fg:#e5e7eb; --muted:#94a3b8; --bg:#0b0f19; --panel:#0e1428; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; line-height: 1.5; color: #0f172a; background: #fff; }
-    header { max-width: var(--maxw); margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
-    header a { text-decoration: none; color: inherit; font-weight: 600; }
-    nav a { margin-left: 16px; opacity: .8; }
-    .hero { position: relative; height: 48vh; min-height: 360px; background: #111 center/cover no-repeat; }
-    .hero::after { content: "Seascapes"; position: absolute; inset: auto 0 16px 0; text-align: center; color: #fff; font-weight: 700; font-size: clamp(24px, 5vw, 48px); text-shadow: 0 2px 24px rgba(0,0,0,.6); }
-    main { max-width: var(--maxw); margin: 32px auto; padding: 0 16px 64px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-    .grid a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
-    .grid img { width: 100%; height: 220px; object-fit: cover; display: block; }
-    footer { border-top: 1px solid #e5e7eb; margin-top: 48px; padding: 16px; text-align: center; font-size: 14px; color: #475569; }
-    .crumbs { font-size: 14px; color: #475569; margin: 8px 0 16px; }
-    .crumbs a { color: inherit; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; color: var(--fg); background: var(--bg); }
+    header { position: sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(9,12,20,.6); border-bottom:1px solid rgba(148,163,184,.15); }
+    .inner { max-width: var(--maxw); margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+    header a { color: var(--fg); text-decoration: none; margin-right: 16px; }
+    main { max-width: var(--maxw); margin: 24px auto 64px; padding: 0 16px; }
+    h1 { margin: 24px 0 8px; font-size: clamp(24px,4.2vw,40px); }
+    p.muted { color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .grid a { display:block; border:1px solid rgba(148,163,184,.15); border-radius: 12px; overflow: hidden; background: var(--panel); }
+    .grid img { width: 100%; height: 220px; object-fit: cover; display:block; }
+    footer { border-top: 1px solid rgba(148,163,184,.15); margin-top: 40px; padding: 16px; color: var(--muted); font-size: 14px; text-align:center; }
   </style>
 </head>
 <body>
   <header>
-    <a href="/">Felix Flores Photo</a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/galleries/">Galleries</a>
-    </nav>
+    <div class="inner">
+      <div>
+        <a href="../">Home</a>
+        <a href="../#galleries">Galleries</a>
+        <a href="../#blog">Blog</a>
+        <a href="../#newsletter">Newsletter</a>
+        <a href="../#contact">Contact</a>
+      </div>
+      <strong>Seascapes</strong>
+    </div>
   </header>
 
-  <!-- Hero: Engure Blue – Baltic Stillness fit well here -->
-  <section class="hero" style="background-image:url('./hero.jpg');"></section>
-
   <main>
-    <div class="crumbs"><a href="/">Home</a> / <a href="/galleries/">Galleries</a> / Seascapes</div>
+    <h1>Seascapes</h1>
+    <p class="muted">The sea does not perform; it moves at its own pace. I wait for the moment when tide, wind, and light align.</p>
 
     <div class="grid">
-      <a href="./Engure-Blue-Baltic-Stillness.jpg" class="glightbox" data-gallery="sea" data-title="Engure Blue — Baltic Stillness"><img src="./Engure-Blue-Baltic-Stillness.jpg" alt="Engure Blue" /></a>
-      <a href="./Mangalsala-bunker-NZ51752-2.jpg" class="glightbox" data-gallery="sea" data-title="Tilted bunker — long exposure"><img src="./Mangalsala-bunker-NZ51752-2.jpg" alt="Tilted bunker long exposure" /></a>
-      <a href="./Mangalsala-sunken-ship-NZ51740.jpg" class="glightbox" data-gallery="sea" data-title="Sunken ship — soft dusk"><img src="./Mangalsala-sunken-ship-NZ51740.jpg" alt="Sunken ship soft dusk" /></a>
-      <a href="./Boldaraja-lighthouse.jpg" class="glightbox" data-gallery="sea" data-title="Bolderāja Lighthouse"><img src="./Boldaraja-lighthouse.jpg" alt="Bolderāja Lighthouse" /></a>
-      <a href="./Baltic-minimal-1.jpg" class="glightbox" data-gallery="sea" data-title="Baltic Minimal — Study I"><img src="./Baltic-minimal-1.jpg" alt="Baltic Minimal Study I" /></a>
+      <a href="./seascape1.jpg" class="glightbox" data-gallery="sea" data-title="Seascapes — Frame 1"><img src="./seascape1.jpg" alt="Seascape 1"></a>
+      <a href="./seascape2.jpg" class="glightbox" data-gallery="sea" data-title="Seascapes — Frame 2"><img src="./seascape2.jpg" alt="Seascape 2"></a>
+      <a href="./seascape3.jpg" class="glightbox" data-gallery="sea" data-title="Seascapes — Frame 3"><img src="./seascape3.jpg" alt="Seascape 3"></a>
+      <a href="./seascape4.jpg" class="glightbox" data-gallery="sea" data-title="Seascapes — Frame 4"><img src="./seascape4.jpg" alt="Seascape 4"></a>
+      <a href="./seascape5.jpg" class="glightbox" data-gallery="sea" data-title="Seascapes — Frame 5"><img src="./seascape5.jpg" alt="Seascape 5"></a>
     </div>
 
     <footer>© Felix I. Flores — Seascapes</footer>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script> GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true }); </script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function(){ GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true }); });
+  </script>
 </body>
 </html>
