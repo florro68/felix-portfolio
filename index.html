@@ -5,67 +5,27 @@
   <title>Felix I. Flores Rodriguez – Photography Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root{
-      --bg:#1c1c1c; --bg2:#111; --fg:#fff; --muted:#cfcfcf; --card:#222; --accent:rgba(255,255,255,.15);
-    }
-    *{box-sizing:border-box}
-    body{font-family:Arial, sans-serif;margin:0;background:var(--bg);color:var(--fg)}
+    :root{--bg:#1c1c1c;--bg2:#111;--fg:#fff;--muted:#cfcfcf;--card:#222;--accent:rgba(255,255,255,.15)}
+    *{box-sizing:border-box} body{font-family:Arial,sans-serif;margin:0;background:var(--bg);color:var(--fg)}
     a{color:var(--fg);text-decoration:none}
-
-    /* Nav */
     nav{background:var(--bg2);padding:10px 20px;position:fixed;top:0;left:0;right:0;display:flex;gap:18px;z-index:1000}
-    nav a{cursor:pointer;opacity:.95}
-    nav a:hover{opacity:1}
-
-    /* Sections */
-    .section{margin-top:80px;display:none;padding:20px}
-    .section.active{display:block}
-    h1,h2{margin:0 0 8px}
-    p.lead{max-width:900px;color:#e9e9e9}
-
-    /* Hero */
-    .hero{
-      background:url('hero-home-3200.jpg') center/cover no-repeat;
-      min-height:70vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:8px;overflow:hidden
-    }
+    nav a{cursor:pointer;opacity:.95} nav a:hover{opacity:1}
+    .section{margin-top:80px;display:none;padding:20px}.section.active{display:block}
+    h1,h2{margin:0 0 8px} p.lead{max-width:900px;color:#e9e9e9}
+    .hero{background:url('hero-home-3200.jpg') center/cover no-repeat;min-height:70vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:8px;overflow:hidden}
     .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
     .hero-content{position:relative;z-index:1;padding:0 16px}
-    .hero-content h1{font-size:2.2rem;margin:.2rem 0}
-    .hero-content p{font-size:1.1rem;margin:.2rem 0}
+    .hero-content h1{font-size:2.2rem;margin:.2rem 0}.hero-content p{font-size:1.1rem;margin:.2rem 0}
     .btn{display:inline-block;padding:.7rem 1.2rem;background:var(--accent);border-radius:6px}
     .btn:hover{background:rgba(255,255,255,.25)}
-
-    /* About under hero */
     .about{max-width:900px;margin:18px auto 0;padding:0 4px;line-height:1.55}
-
-    /* Gallery cards (section intros) */
     .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
     .thumb{background:var(--card);border-radius:8px;overflow:hidden}
-    .thumb img{width:100%;height:auto;display:block;cursor:pointer;transition:transform .25s ease}
+    .thumb img{width:100%;height:auto;display:block;transition:transform .25s ease}
     .thumb img:hover{transform:scale(1.03)}
-
-    /* Blog cards */
+    .more{margin-top:10px}
     .blog-post{margin:16px auto;max-width:800px;padding:20px;background:#2c2c2c;border-radius:8px;cursor:pointer}
-    .blog-post:hover{background:#3a3a3a}
-    .blog-post h3{margin:0}
-    .blog-content{display:none;margin-top:10px}
-
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:2000}
-    .lightbox.show{display:flex}
-    .lb-inner{position:relative;max-width:92vw;max-height:88vh}
-    .lb-img{max-width:92vw;max-height:88vh;border-radius:6px;display:block;margin:auto}
-    .lb-caption{color:#ddd;text-align:center;margin-top:8px;font-size:.95rem}
-    .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;
-      padding:10px 14px;border-radius:8px;cursor:pointer}
-    .lb-prev{left:-56px}
-    .lb-next{right:-56px}
-    .lb-close{position:absolute;top:-48px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
-    @media (max-width: 768px){
-      .lb-prev{left:6px} .lb-next{right:6px} .lb-close{top:-44px;right:6px}
-    }
-
-    /* Footer */
+    .blog-post:hover{background:#3a3a3a}.blog-post h3{margin:0}.blog-content{display:none;margin-top:10px}
     footer{padding:24px 20px;color:#bbb;text-align:center}
   </style>
 </head>
@@ -75,7 +35,7 @@
     <a onclick="showSection('wildhorses')">Wild Horses</a>
     <a onclick="showSection('ukquiet')">UK Quiet</a>
     <a onclick="showSection('waterfalls')">Waterfalls</a>
-    <a onclick="showSection('seascapes')">Seascapes</a>
+    <a onclick="showSection('seascape')">Seascapes</a>
     <a onclick="showSection('engure')">Engure Seascape</a>
     <a onclick="showSection('blog')">Blog</a>
     <a onclick="showSection('newsletter')">Newsletter</a>
@@ -101,72 +61,76 @@
   <div id="wildhorses" class="section">
     <h2>Wild Horses</h2>
     <p class="lead">Captured in Latvia’s Liellupe Meadows — raw beauty, tension, and quiet moments from freely roaming herds.</p>
-    <div class="thumbs" data-gallery="wildhorses">
-      <div class="thumb"><img src="wild1.jpg" alt="Wild Horses 1" data-index="0"></div>
-      <div class="thumb"><img src="wild2.jpg" alt="Wild Horses 2" data-index="1"></div>
-      <div class="thumb"><img src="wild3.jpg" alt="Wild Horses 3" data-index="2"></div>
-      <div class="thumb"><img src="wild4.jpg" alt="Wild Horses 4" data-index="3"></div>
-      <div class="thumb"><img src="wild5.jpg" alt="Wild Horses 5" data-index="4"></div>
+    <div class="thumbs">
+      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild1.jpg" alt="Wild Horses 1"></a></div>
+      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild2.jpg" alt="Wild Horses 2"></a></div>
+      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild3.jpg" alt="Wild Horses 3"></a></div>
+      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild4.jpg" alt="Wild Horses 4"></a></div>
+      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild5.jpg" alt="Wild Horses 5"></a></div>
     </div>
+    <p class="more"><a href="wild-horses/index.html">View full gallery →</a></p>
   </div>
 
   <!-- UK QUIET -->
   <div id="ukquiet" class="section">
     <h2>UK Quiet</h2>
     <p class="lead">North Yorkshire coast and countryside — solitude, muted tones, and timeless character.</p>
-    <div class="thumbs" data-gallery="ukquiet">
-      <div class="thumb"><img src="uk1.jpg" alt="UK Quiet 1" data-index="0"></div>
-      <div class="thumb"><img src="uk2.jpg" alt="UK Quiet 2" data-index="1"></div>
-      <div class="thumb"><img src="uk3.jpg" alt="UK Quiet 3" data-index="2"></div>
-      <div class="thumb"><img src="uk4.jpg" alt="UK Quiet 4" data-index="3"></div>
-      <div class="thumb"><img src="uk5.jpg" alt="UK Quiet 5" data-index="4"></div>
+    <div class="thumbs">
+      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk1.jpg" alt="UK Quiet 1"></a></div>
+      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk2.jpg" alt="UK Quiet 2"></a></div>
+      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk3.jpg" alt="UK Quiet 3"></a></div>
+      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk4.jpg" alt="UK Quiet 4"></a></div>
+      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk5.jpg" alt="UK Quiet 5"></a></div>
     </div>
+    <p class="more"><a href="uk-quiet/index.html">View full gallery →</a></p>
   </div>
 
   <!-- WATERFALLS -->
   <div id="waterfalls" class="section">
     <h2>Waterfalls</h2>
     <p class="lead">Movement and stillness — long-exposure studies of cascading water, framed with care.</p>
-    <div class="thumbs" data-gallery="waterfalls">
-      <div class="thumb"><img src="waterfall1.jpg" alt="Waterfall 1" data-index="0"></div>
-      <div class="thumb"><img src="waterfall2.jpg" alt="Waterfall 2" data-index="1"></div>
-      <div class="thumb"><img src="waterfall3.jpg" alt="Waterfall 3" data-index="2"></div>
-      <div class="thumb"><img src="waterfall4.jpg" alt="Waterfall 4" data-index="3"></div>
-      <div class="thumb"><img src="waterfall5.jpg" alt="Waterfall 5" data-index="4"></div>
+    <div class="thumbs">
+      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall1.jpg" alt="Waterfall 1"></a></div>
+      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall2.jpg" alt="Waterfall 2"></a></div>
+      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall3.jpg" alt="Waterfall 3"></a></div>
+      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall4.jpg" alt="Waterfall 4"></a></div>
+      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall5.jpg" alt="Waterfall 5"></a></div>
     </div>
+    <p class="more"><a href="waterfalls/index.html">View full gallery →</a></p>
   </div>
 
   <!-- SEASCAPES -->
-  <div id="seascapes" class="section">
+  <div id="seascape" class="section">
     <h2>Seascapes</h2>
     <p class="lead">From calm horizons to crashing waves — changing moods of the sea.</p>
-    <div class="thumbs" data-gallery="seascapes">
-      <div class="thumb"><img src="seascape1.jpg" alt="Seascape 1" data-index="0"></div>
-      <div class="thumb"><img src="seascape2.jpg" alt="Seascape 2" data-index="1"></div>
-      <div class="thumb"><img src="seascape3.jpg" alt="Seascape 3" data-index="2"></div>
-      <div class="thumb"><img src="seascape4.jpg" alt="Seascape 4" data-index="3"></div>
-      <div class="thumb"><img src="seascape5.jpg" alt="Seascape 5" data-index="4"></div>
+    <div class="thumbs">
+      <div class="thumb"><a href="seascape/index.html"><img src="seascape/seascape1.jpg" alt="Seascape 1"></a></div>
+      <div class="thumb"><a href="seascape/index.html"><img src="seascape/seascape2.jpg" alt="Seascape 2"></a></div>
+      <div class="thumb"><a href="seascape/index.html"><img src="seascape/seascape3.jpg" alt="Seascape 3"></a></div>
+      <div class="thumb"><a href="seascape/index.html"><img src="seascape/seascape4.jpg" alt="Seascape 4"></a></div>
+      <div class="thumb"><a href="seascape/index.html"><img src="seascape/seascape5.jpg" alt="Seascape 5"></a></div>
     </div>
+    <p class="more"><a href="seascape/index.html">View full gallery →</a></p>
   </div>
 
   <!-- ENGURE -->
   <div id="engure" class="section">
     <h2>Engure Seascape</h2>
     <p class="lead">Quiet waters and maritime textures from Engure port, Latvia.</p>
-    <div class="thumbs" data-gallery="engure">
-      <div class="thumb"><img src="engure1.jpg" alt="Engure 1" data-index="0"></div>
-      <div class="thumb"><img src="engure2.jpg" alt="Engure 2" data-index="1"></div>
-      <div class="thumb"><img src="engure3.jpg" alt="Engure 3" data-index="2"></div>
-      <div class="thumb"><img src="engure4.jpg" alt="Engure 4" data-index="3"></div>
-      <div class="thumb"><img src="engure5.jpg" alt="Engure 5" data-index="4"></div>
+    <div class="thumbs">
+      <div class="thumb"><a href="engure/index.html"><img src="engure/engure1.jpg" alt="Engure 1"></a></div>
+      <div class="thumb"><a href="engure/index.html"><img src="engure/engure2.jpg" alt="Engure 2"></a></div>
+      <div class="thumb"><a href="engure/index.html"><img src="engure/engure3.jpg" alt="Engure 3"></a></div>
+      <div class="thumb"><a href="engure/index.html"><img src="engure/engure4.jpg" alt="Engure 4"></a></div>
+      <div class="thumb"><a href="engure/index.html"><img src="engure/engure5.jpg" alt="Engure 5"></a></div>
     </div>
+    <p class="more"><a href="engure/index.html">View full gallery →</a></p>
   </div>
 
   <!-- BLOG -->
   <div id="blog" class="section">
     <h2>Blog</h2>
     <p class="lead">Insights from the field — click a title to read the full post.</p>
-
     <div class="blog-post" onclick="toggleBlogContent(this)">
       <h3>How to Create Meaning with Your Photography</h3>
       <div class="blog-content">
@@ -174,7 +138,6 @@
         <p>– Felix I. Flores Rodriguez</p>
       </div>
     </div>
-
     <div class="blog-post" onclick="toggleBlogContent(this)">
       <h3>How I Capture Wild Horses Without Disturbing Them</h3>
       <div class="blog-content">
@@ -182,7 +145,6 @@
         <p>– Felix I. Flores</p>
       </div>
     </div>
-
     <div class="blog-post" onclick="toggleBlogContent(this)">
       <h3>Why I Photograph in Black and White</h3>
       <div class="blog-content">
@@ -190,7 +152,6 @@
         <p>– Felix I. Flores</p>
       </div>
     </div>
-
     <div class="blog-post" onclick="toggleBlogContent(this)">
       <h3>The Moment I Knew Photography Was My Voice</h3>
       <div class="blog-content">
@@ -219,112 +180,312 @@
     <p class="lead">Reach me at: <a href="mailto:felixfloresrodriguezphoto@gmail.com">felixfloresrodriguezphoto@gmail.com</a></p>
   </div>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lb-inner">
-      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-      <img id="lbImg" class="lb-img" src="" alt="">
-      <div class="lb-caption" id="lbCaption"></div>
-      <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">⟨</button>
-      <button class="lb-btn lb-next" id="lbNext" aria-label="Next">⟩</button>
-    </div>
-  </div>
+  <footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
 
   <script>
-    // Section navigation
-    function showSection(id){
-      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo(0,0);
-    }
-    // Blog toggle
-    function toggleBlogContent(post){
-      const content=post.querySelector('.blog-content');
-      const open=content.style.display==='block';
-      document.querySelectorAll('.blog-content').forEach(c=>c.style.display='none');
-      if(!open) content.style.display='block';
-    }
-
-    // Build gallery map
-    const galleryEls = document.querySelectorAll('.thumbs');
-    const galleries = {};
-    galleryEls.forEach(group=>{
-      const id = group.getAttribute('data-gallery');
-      const imgs = Array.from(group.querySelectorAll('img')).map(img=>({
-        src: img.getAttribute('src'),
-        alt: img.getAttribute('alt') || ''
-      }));
-      galleries[id] = imgs;
-      group.addEventListener('click', (e)=>{
-        const t = e.target.closest('img');
-        if(!t) return;
-        openLightbox(id, parseInt(t.dataset.index || 0, 10));
-      });
-    });
-
-    // Lightbox logic
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const lbCaption = document.getElementById('lbCaption');
-    const lbPrev = document.getElementById('lbPrev');
-    const lbNext = document.getElementById('lbNext');
-    const lbClose = document.getElementById('lbClose');
-    let currentGallery = null;
-    let currentIndex = 0;
-
-    function openLightbox(gid, idx){
-      currentGallery = gid;
-      currentIndex = idx;
-      updateLightbox();
-      lb.classList.add('show');
-      lb.setAttribute('aria-hidden','false');
-    }
-    function updateLightbox(){
-      const item = galleries[currentGallery][currentIndex];
-      lbImg.src = item.src;
-      lbImg.alt = item.alt;
-      lbCaption.textContent = item.alt || '';
-    }
-    function closeLightbox(){
-      lb.classList.remove('show');
-      lb.setAttribute('aria-hidden','true');
-      lbImg.src = '';
-    }
-    function prevImg(){
-      const len = galleries[currentGallery].length;
-      currentIndex = (currentIndex - 1 + len) % len;
-      updateLightbox();
-    }
-    function nextImg(){
-      const len = galleries[currentGallery].length;
-      currentIndex = (currentIndex + 1) % len;
-      updateLightbox();
-    }
-
-    lbPrev.addEventListener('click', prevImg);
-    lbNext.addEventListener('click', nextImg);
-    lbClose.addEventListener('click', closeLightbox);
-    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
-
-    // Keyboard support
-    window.addEventListener('keydown', (e)=>{
-      if(!lb.classList.contains('show')) return;
-      if(e.key === 'Escape') closeLightbox();
-      if(e.key === 'ArrowLeft') prevImg();
-      if(e.key === 'ArrowRight') nextImg();
-    });
-
-    // Basic touch swipe
-    let touchStartX = 0;
-    lbImg.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].clientX; }, {passive:true});
-    lbImg.addEventListener('touchend', (e)=>{
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if(Math.abs(dx) > 40){ dx > 0 ? prevImg() : nextImg(); }
-    }, {passive:true});
+    function showSection(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
+    function toggleBlogContent(post){const c=post.querySelector('.blog-content');const o=c.style.display==='block';document.querySelectorAll('.blog-content').forEach(x=>x.style.display='none');if(!o)c.style.display='block';}
   </script>
-
-  <footer>
-    &copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez
-  </footer>
 </body>
 </html>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wild Horses – Felix I. Flores Rodriguez</title>
+<style>
+  body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif}
+  a{color:#fff;text-decoration:none}
+  header{position:sticky;top:0;background:#000;padding:12px 20px}
+  .hero{min-height:48vh;background:url('hero-wild-horses.jpg') center/cover no-repeat;position:relative}
+  .hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+  .hero-inner{position:relative;z-index:1;padding:18vh 20px 14px}
+  h1{margin:0 0 6px} p.lead{margin:0 0 12px;color:#d9d9d9}
+  .grid{display:grid;gap:8px;padding:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .grid img{width:100%;height:auto;display:block;border-radius:6px;cursor:pointer}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:2000}
+  .lightbox.show{display:flex}.lb-inner{position:relative;max-width:92vw;max-height:88vh}
+  .lb-img{max-width:92vw;max-height:88vh;border-radius:6px;display:block;margin:auto}
+  .lb-caption{color:#ddd;text-align:center;margin-top:8px}
+  .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
+  .lb-prev{left:-56px}.lb-next{right:-56px}.lb-close{position:absolute;top:-48px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+  @media (max-width:768px){.lb-prev{left:6px}.lb-next{right:6px}.lb-close{top:-44px;right:6px}}
+  footer{padding:24px 20px;color:#bbb;text-align:center}
+</style></head><body>
+<header><a href="../index.html#galleries">← Back to Home</a></header>
+
+<section class="hero"><div class="hero-inner">
+  <h1>Wild Horses</h1><p class="lead">Raw beauty, tension, and quiet moments from Liellupe Meadows.</p>
+</div></section>
+
+<main class="grid" id="grid">
+  <img src="wild1.jpg" alt="Wild horses 1" data-i="0">
+  <img src="wild2.jpg" alt="Wild horses 2" data-i="1">
+  <img src="wild3.jpg" alt="Wild horses 3" data-i="2">
+  <img src="wild4.jpg" alt="Wild horses 4" data-i="3">
+  <img src="wild5.jpg" alt="Wild horses 5" data-i="4">
+</main>
+
+<div class="lightbox" id="lb" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImg" class="lb-img" src="" alt="">
+    <div class="lb-caption" id="lbCap"></div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">⟨</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next">⟩</button>
+  </div>
+</div>
+
+<footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
+
+<script>
+  const imgs=[...document.querySelectorAll('#grid img')];const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lbImg');const lbCap=document.getElementById('lbCap');
+  const prev=document.getElementById('lbPrev');const next=document.getElementById('lbNext');const closeB=document.getElementById('lbClose');
+  let idx=0;
+  imgs.forEach(i=>i.addEventListener('click',()=>{idx=+i.dataset.i;open()}));
+  function open(){update();lb.classList.add('show');lb.setAttribute('aria-hidden','false')}
+  function close(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.src=''}
+  function update(){lbImg.src=imgs[idx].src;lbCap.textContent=imgs[idx].alt||''}
+  function prevF(){idx=(idx-1+imgs.length)%imgs.length;update()}
+  function nextF(){idx=(idx+1)%imgs.length;update()}
+  prev.onclick=prevF;next.onclick=nextF;closeB.onclick=close;lb.onclick=e=>{if(e.target===lb)close()}
+  window.addEventListener('keydown',e=>{if(!lb.classList.contains('show'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prevF();if(e.key==='ArrowRight')nextF()});
+  let sx=0;lbImg.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX},{passive:true});
+  lbImg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?prevF():nextF()}},{passive:true});
+</script>
+</body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UK Quiet – Felix I. Flores Rodriguez</title>
+<style>
+  body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif} a{color:#fff;text-decoration:none}
+  header{position:sticky;top:0;background:#000;padding:12px 20px}
+  .hero{min-height:48vh;background:url('hero-uk-quiet.jpg') center/cover no-repeat;position:relative}
+  .hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+  .hero-inner{position:relative;z-index:1;padding:18vh 20px 14px}
+  h1{margin:0 0 6px} p.lead{margin:0 0 12px;color:#d9d9d9}
+  .grid{display:grid;gap:8px;padding:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .grid img{width:100%;height:auto;display:block;border-radius:6px;cursor:pointer}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:2000}
+  .lightbox.show{display:flex}.lb-inner{position:relative;max-width:92vw;max-height:88vh}
+  .lb-img{max-width:92vw;max-height:88vh;border-radius:6px;display:block;margin:auto}
+  .lb-caption{color:#ddd;text-align:center;margin-top:8px}
+  .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
+  .lb-prev{left:-56px}.lb-next{right:-56px}.lb-close{position:absolute;top:-48px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+  @media (max-width:768px){.lb-prev{left:6px}.lb-next{right:6px}.lb-close{top:-44px;right:6px}}
+  footer{padding:24px 20px;color:#bbb;text-align:center}
+</style></head><body>
+<header><a href="../index.html#galleries">← Back to Home</a></header>
+<section class="hero"><div class="hero-inner">
+  <h1>UK Quiet</h1><p class="lead">Solitude, muted tones, and timeless character.</p>
+</div></section>
+<main class="grid" id="grid">
+  <img src="uk1.jpg" alt="UK Quiet 1" data-i="0">
+  <img src="uk2.jpg" alt="UK Quiet 2" data-i="1">
+  <img src="uk3.jpg" alt="UK Quiet 3" data-i="2">
+  <img src="uk4.jpg" alt="UK Quiet 4" data-i="3">
+  <img src="uk5.jpg" alt="UK Quiet 5" data-i="4">
+</main>
+
+<div class="lightbox" id="lb" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImg" class="lb-img" src="" alt=""><div class="lb-caption" id="lbCap"></div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">⟨</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next">⟩</button>
+  </div>
+</div>
+
+<footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
+
+<script>
+  const imgs=[...document.querySelectorAll('#grid img')];const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lbImg');const lbCap=document.getElementById('lbCap');
+  const prev=document.getElementById('lbPrev');const next=document.getElementById('lbNext');const closeB=document.getElementById('lbClose');
+  let idx=0;imgs.forEach(i=>i.addEventListener('click',()=>{idx=+i.dataset.i;open()}));
+  function open(){update();lb.classList.add('show');lb.setAttribute('aria-hidden','false')}
+  function close(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.src=''}
+  function update(){lbImg.src=imgs[idx].src;lbCap.textContent=imgs[idx].alt||''}
+  function prevF(){idx=(idx-1+imgs.length)%imgs.length;update()}
+  function nextF(){idx=(idx+1)%imgs.length;update()}
+  prev.onclick=prevF;next.onclick=nextF;closeB.onclick=close;lb.onclick=e=>{if(e.target===lb)close()}
+  window.addEventListener('keydown',e=>{if(!lb.classList.contains('show'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prevF();if(e.key==='ArrowRight')nextF()});
+  let sx=0;lbImg.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX},{passive:true});
+  lbImg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?prevF():nextF()}},{passive:true});
+</script>
+</body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waterfalls – Felix I. Flores Rodriguez</title>
+<style>
+  body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif} a{color:#fff;text-decoration:none}
+  header{position:sticky;top:0;background:#000;padding:12px 20px}
+  .hero{min-height:48vh;background:url('hero-waterfalls.jpg') center/cover no-repeat;position:relative}
+  .hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+  .hero-inner{position:relative;z-index:1;padding:18vh 20px 14px}
+  h1{margin:0 0 6px} p.lead{margin:0 0 12px;color:#d9d9d9}
+  .grid{display:grid;gap:8px;padding:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .grid img{width:100%;height:auto;display:block;border-radius:6px;cursor:pointer}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:2000}
+  .lightbox.show{display:flex}.lb-inner{position:relative;max-width:92vw;max-height:88vh}
+  .lb-img{max-width:92vw;max-height:88vh;border-radius:6px;display:block;margin:auto}
+  .lb-caption{color:#ddd;text-align:center;margin-top:8px}
+  .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
+  .lb-prev{left:-56px}.lb-next{right:-56px}.lb-close{position:absolute;top:-48px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+  @media (max-width:768px){.lb-prev{left:6px}.lb-next{right:6px}.lb-close{top:-44px;right:6px}}
+  footer{padding:24px 20px;color:#bbb;text-align:center}
+</style></head><body>
+<header><a href="../index.html#galleries">← Back to Home</a></header>
+<section class="hero"><div class="hero-inner">
+  <h1>Waterfalls</h1><p class="lead">Movement and stillness, framed with care.</p>
+</div></section>
+<main class="grid" id="grid">
+  <img src="waterfall1.jpg" alt="Waterfall 1" data-i="0">
+  <img src="waterfall2.jpg" alt="Waterfall 2" data-i="1">
+  <img src="waterfall3.jpg" alt="Waterfall 3" data-i="2">
+  <img src="waterfall4.jpg" alt="Waterfall 4" data-i="3">
+  <img src="waterfall5.jpg" alt="Waterfall 5" data-i="4">
+</main>
+
+<div class="lightbox" id="lb" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImg" class="lb-img" src="" alt=""><div class="lb-caption" id="lbCap"></div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">⟨</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next">⟩</button>
+  </div>
+</div>
+
+<footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
+
+<script>
+  const imgs=[...document.querySelectorAll('#grid img')];const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lbImg');const lbCap=document.getElementById('lbCap');
+  const prev=document.getElementById('lbPrev');const next=document.getElementById('lbNext');const closeB=document.getElementById('lbClose');
+  let idx=0;imgs.forEach(i=>i.addEventListener('click',()=>{idx=+i.dataset.i;open()}));
+  function open(){update();lb.classList.add('show');lb.setAttribute('aria-hidden','false')}
+  function close(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.src=''}
+  function update(){lbImg.src=imgs[idx].src;lbCap.textContent=imgs[idx].alt||''}
+  function prevF(){idx=(idx-1+imgs.length)%imgs.length;update()}
+  function nextF(){idx=(idx+1)%imgs.length;update()}
+  prev.onclick=prevF;next.onclick=nextF;closeB.onclick=close;lb.onclick=e=>{if(e.target===lb)close()}
+  window.addEventListener('keydown',e=>{if(!lb.classList.contains('show'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prevF();if(e.key==='ArrowRight')nextF()});
+  let sx=0;lbImg.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX},{passive:true});
+  lbImg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?prevF():nextF()}},{passive:true});
+</script>
+</body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seascapes – Felix I. Flores Rodriguez</title>
+<style>
+  body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif} a{color:#fff;text-decoration:none}
+  header{position:sticky;top:0;background:#000;padding:12px 20px}
+  .hero{min-height:48vh;background:url('hero-seascape.jpg') center/cover no-repeat;position:relative}
+  .hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+  .hero-inner{position:relative;z-index:1;padding:18vh 20px 14px}
+  h1{margin:0 0 6px} p.lead{margin:0 0 12px;color:#d9d9d9}
+  .grid{display:grid;gap:8px;padding:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .grid img{width:100%;height:auto;display:block;border-radius:6px;cursor:pointer}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:2000}
+  .lightbox.show{display:flex}.lb-inner{position:relative;max-width:92vw;max-height:88vh}
+  .lb-img{max-width:92vw;max-height:88vh;border-radius:6px;display:block;margin:auto}
+  .lb-caption{color:#ddd;text-align:center;margin-top:8px}
+  .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
+  .lb-prev{left:-56px}.lb-next{right:-56px}.lb-close{position:absolute;top:-48px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+  @media (max-width:768px){.lb-prev{left:6px}.lb-next{right:6px}.lb-close{top:-44px;right:6px}}
+  footer{padding:24px 20px;color:#bbb;text-align:center}
+</style></head><body>
+<header><a href="../index.html#galleries">← Back to Home</a></header>
+<section class="hero"><div class="hero-inner">
+  <h1>Seascapes</h1><p class="lead">Changing moods of the sea — calm to fierce.</p>
+</div></section>
+<main class="grid" id="grid">
+  <img src="seascape1.jpg" alt="Seascape 1" data-i="0">
+  <img src="seascape2.jpg" alt="Seascape 2" data-i="1">
+  <img src="seascape3.jpg" alt="Seascape 3" data-i="2">
+  <img src="seascape4.jpg" alt="Seascape 4" data-i="3">
+  <img src="seascape5.jpg" alt="Seascape 5" data-i="4">
+</main>
+
+<div class="lightbox" id="lb" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImg" class="lb-img" src="" alt=""><div class="lb-caption" id="lbCap"></div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">⟨</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next">⟩</button>
+  </div>
+</div>
+
+<footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
+
+<script>
+  const imgs=[...document.querySelectorAll('#grid img')];const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lbImg');const lbCap=document.getElementById('lbCap');
+  const prev=document.getElementById('lbPrev');const next=document.getElementById('lbNext');const closeB=document.getElementById('lbClose');
+  let idx=0;imgs.forEach(i=>i.addEventListener('click',()=>{idx=+i.dataset.i;open()}));
+  function open(){update();lb.classList.add('show');lb.setAttribute('aria-hidden','false')}
+  function close(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.src=''}
+  function update(){lbImg.src=imgs[idx].src;lbCap.textContent=imgs[idx].alt||''}
+  function prevF(){idx=(idx-1+imgs.length)%imgs.length;update()}
+  function nextF(){idx=(idx+1)%imgs.length;update()}
+  prev.onclick=prevF;next.onclick=nextF;closeB.onclick=close;lb.onclick=e=>{if(e.target===lb)close()}
+  window.addEventListener('keydown',e=>{if(!lb.classList.contains('show'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prevF();if(e.key==='ArrowRight')nextF()});
+  let sx=0;lbImg.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX},{passive:true});
+  lbImg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?prevF():nextF()}},{passive:true});
+</script>
+</body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engure Seascape – Felix I. Flores Rodriguez</title>
+<style>
+  body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif} a{color:#fff;text-decoration:none}
+  header{position:sticky;top:0;background:#000;padding:12px 20px}
+  .hero{min-height:48vh;background:url('hero-engure.jpg') center/cover no-repeat;position:relative}
+  .hero:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+  .hero-inner{position:relative;z-index:1;padding:18vh 20px 14px}
+  h1{margin:0 0 6px} p.lead{margin:0 0 12px;color:#d9d9d9}
+  .grid{display:grid;gap:8px;padding:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .grid img{width:100%;height:auto;display:block;border-radius:6px;cursor:pointer}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:2000}
+  .lightbox.show{display:flex}.lb-inner{position:relative;max-width:92vw;max-height:88vh}
+  .lb-img{max-width:92vw;max-height:88vh;border-radius:6px;display:block;margin:auto}
+  .lb-caption{color:#ddd;text-align:center;margin-top:8px}
+  .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
+  .lb-prev{left:-56px}.lb-next{right:-56px}.lb-close{position:absolute;top:-48px;right:0;background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+  @media (max-width:768px){.lb-prev{left:6px}.lb-next{right:6px}.lb-close{top:-44px;right:6px}}
+  footer{padding:24px 20px;color:#bbb;text-align:center}
+</style></head><body>
+<header><a href="../index.html#galleries">← Back to Home</a></header>
+<section class="hero"><div class="hero-inner">
+  <h1>Engure Seascape</h1><p class="lead">Quiet waters and maritime textures from Engure port, Latvia.</p>
+</div></section>
+<main class="grid" id="grid">
+  <img src="engure1.jpg" alt="Engure 1" data-i="0">
+  <img src="engure2.jpg" alt="Engure 2" data-i="1">
+  <img src="engure3.jpg" alt="Engure 3" data-i="2">
+  <img src="engure4.jpg" alt="Engure 4" data-i="3">
+  <img src="engure5.jpg" alt="Engure 5" data-i="4">
+</main>
+
+<div class="lightbox" id="lb" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <img id="lbImg" class="lb-img" src="" alt=""><div class="lb-caption" id="lbCap"></div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">⟨</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next">⟩</button>
+  </div>
+</div>
+
+<footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
+
+<script>
+  const imgs=[...document.querySelectorAll('#grid img')];const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lbImg');const lbCap=document.getElementById('lbCap');
+  const prev=document.getElementById('lbPrev');const next=document.getElementById('lbNext');const closeB=document.getElementById('lbClose');
+  let idx=0;imgs.forEach(i=>i.addEventListener('click',()=>{idx=+i.dataset.i;open()}));
+  function open(){update();lb.classList.add('show');lb.setAttribute('aria-hidden','false')}
+  function close(){lb.classList.remove('show');lb.setAttribute('aria-hidden','true');lbImg.src=''}
+  function update(){lbImg.src=imgs[idx].src;lbCap.textContent=imgs[idx].alt||''}
+  function prevF(){idx=(idx-1+imgs.length)%imgs.length;update()}
+  function nextF(){idx=(idx+1)%imgs.length;update()}
+  prev.onclick=prevF;next.onclick=nextF;closeB.onclick=close;lb.onclick=e=>{if(e.target===lb)close()}
+  window.addEventListener('keydown',e=>{if(!lb.classList.contains('show'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')prevF();if(e.key==='ArrowRight')nextF()});
+  let sx=0;lbImg.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX},{passive:true});
+  lbImg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx>0?prevF():nextF()}},{passive:true});
+</script>
+</body></html>
