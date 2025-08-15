@@ -2,86 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Felix I. Flores — Home</title>
-  <meta name="description" content="Felix I. Flores — photography and visual storytelling." />
-  <meta property="og:title" content="Felix I. Flores — Home" />
-  <meta property="og:description" content="Photography and visual storytelling." />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="hero-home-3200.jpg" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Felix I. Flores — Photography</title>
+  <meta name="description" content="Quiet stories in wild horses, UK landscapes, waterfalls, and Baltic seascapes." />
+  <style>
+    :root { --maxw: 1200px; --fg: #e5e7eb; --muted:#94a3b8; --bg:#0b0f19; --panel:#11162a; --accent:#cbd5e1; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; color: var(--fg); background: var(--bg); }
+
+    /* Fixed top nav */
+    .nav { position: fixed; top: 0; left: 0; right:0; z-index: 50; backdrop-filter: blur(8px); background: rgba(9,12,20,.6); border-bottom: 1px solid rgba(148,163,184,.15); }
+    .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 700; letter-spacing:.2px; color: var(--fg); text-decoration: none; }
+    .menu a { color: var(--fg); text-decoration: none; margin-left: 16px; opacity: .9; }
+    .menu a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero { position: relative; height: 88vh; min-height: 520px; margin-top: 56px; background: url('./hero-home-3200.jpg') center/cover no-repeat fixed; display: grid; place-items: center; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.65)); }
+    .hero-content { position: relative; text-align: center; max-width: 860px; padding: 0 16px; animation: fadeIn 900ms ease-out both; }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 56px); }
+    .hero p { margin: 0 auto; color: var(--accent); line-height: 1.7; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+
+    main { max-width: var(--maxw); margin: 24px auto 80px; padding: 0 16px; }
+    section { margin-top: 56px; }
+    h2 { margin: 0 0 8px; font-size: clamp(20px, 3.4vw, 32px); }
+    .muted { color: var(--muted); }
+
+    /* Galleries grid on Home */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .card { display: block; text-decoration: none; color: var(--fg); background: linear-gradient(180deg, #0e1428, #0c1222); border: 1px solid rgba(148,163,184,.15); border-radius: 14px; overflow: hidden; }
+    .card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .card h3 { margin: 12px; font-size: 18px; }
+    .card p { margin: 0 12px 14px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+    footer { max-width: var(--maxw); margin: 56px auto 32px; padding: 0 16px; color: var(--muted); font-size: 14px; }
+  </style>
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Main">
-      <div class="brand"><a href="index.html" aria-current="page">Felix I. Flores</a></div>
-      <button class="menu-btn" id="menuBtn" aria-controls="siteNav" aria-expanded="false">Menu</button>
-      <nav>
-        <ul id="siteNav">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="galleries.html">Galleries</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Felix I. Flores</a>
+      <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#galleries">Galleries</a>
+        <a href="#blog">Blog</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Photography & Visual Storytelling</h1>
-      <p>Quiet images. Clear intent. Crafted for print and lasting viewing.</p>
-      <div class="cta">
-        <a class="btn accent" href="galleries.html">View Galleries</a>
-        <a class="btn" href="newsletter.html">Join Newsletter</a>
-      </div>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Quiet Stories. Honest Frames.</h1>
+      <p>Hello and welcome to my site. I am Felix, a photographer, observer, and storyteller. My work has changed. I no longer just take photos. I create them with purpose, patience, and presence. I have grown in technique, but more importantly, I have learned to see. To slow down. To frame not just what is there, but what it means. Each image now reflects more than a moment. It reflects intent. Stillness. Story. This portfolio marks that shift. It is not just about what I saw. It is about how I chose to show it. This is where my craft became a voice.</p>
     </div>
   </section>
 
-  <!-- Main: About only -->
   <main>
-    <div class="container stack">
-      <section class="card about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About Me</h2>
-        <p>
-          I’m Felix I. Flores — a photographer focused on honest, disciplined images.
-          I value restraint, strong composition, and print-ready files.
-          You’ll find work built on patience, field craft, and respect for the subject.
-        </p>
-        <p class="about-tagline">NO Gatekeepers</p>
-        <p class="muted small">
-          You control how you experience the work.
-          Visit each section using the tabs above.
-        </p>
-      </section>
-    </div>
+    <section id="galleries">
+      <h2>Galleries</h2>
+      <p class="muted">Five ongoing bodies of work. Click to enter each gallery.</p>
+      <div class="grid">
+        <a class="card" href="./wild-horses/">
+          <img src="./wild-horses/wild1.jpg" alt="Wild Horses" />
+          <h3>Wild Horses</h3>
+          <p>They move like wind yet carry the weight of history. I follow storms and silence, chasing moments that vanish as fast as they appear.</p>
+        </a>
+        <a class="card" href="./uk-quiet/">
+          <img src="./uk-quiet/uk1.jpg" alt="UK Quiet" />
+          <h3>UK Quiet</h3>
+          <p>Mist over stone and rail, where time slows and echoes linger longer than voices.</p>
+        </a>
+        <a class="card" href="./waterfalls/">
+          <img src="./waterfalls/waterfall1.jpg" alt="Waterfalls" />
+          <h3>Waterfalls</h3>
+          <p>The roar draws you in; the stillness after the fall is what remains.</p>
+        </a>
+        <a class="card" href="./seascapes/">
+          <img src="./seascapes/seascape1.jpg" alt="Seascapes" />
+          <h3>Seascapes</h3>
+          <p>I wait for tide, wind, and light to speak in the same voice.</p>
+        </a>
+        <a class="card" href="./engure/">
+          <img src="./engure/engure1.jpg" alt="Engure" />
+          <h3>Engure</h3>
+          <p>In this quiet port the water holds its breath; rust and wood remember departures and returns.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="blog">
+      <h2>Blog</h2>
+      <p class="muted">Notes on process, field craft, and the stories behind frames.</p>
+      <p><a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener">Read my articles on 35mmc →</a></p>
+    </section>
+
+    <section id="newsletter">
+      <h2>Newsletter</h2>
+      <p class="muted">Occasional updates with new work and field notes. No noise.</p>
+      <iframe aria-label="Newsletter Signup — Felix I. Flores" frameborder="0" style="height:520px;width:100%;max-width:var(--maxw);border:none;background:#0e1428;border:1px solid rgba(148,163,184,.15);border-radius:12px;" src="https://forms.zohopublic.eu/felixifloresphoto1/form/NewsletterSignup/formperma/GlGv9KxU6dQBc1-BL9LImnTd3tZ98Z1QJfhbXEWmlKI"></iframe>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">For assignments, collaborations, or prints.</p>
+      <p>Email: <a href="mailto:felixfloresrodriguezphoto@gmail.com">felixfloresrodriguezphoto@gmail.com</a></p>
+      <p><a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener">More writing on 35mmc →</a></p>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-row">
-      <div class="small">© <span id="year"></span> Felix I. Flores. All rights reserved.</div>
-      <div class="small"><a href="contact.html">Contact</a></div>
-    </div>
-  </footer>
-
-  <!-- Tiny JS for mobile menu and year -->
-  <script>
-    (function () {
-      var btn = document.getElementById('menuBtn');
-      var nav = document.getElementById('siteNav');
-      if (btn && nav) {
-        btn.addEventListener('click', function () {
-          var open = nav.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-      var y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
-  </script>
+  <footer>© Felix I. Flores</footer>
 </body>
 </html>
