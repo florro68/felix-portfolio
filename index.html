@@ -1,199 +1,76 @@
+<!-- rebuild: fixed-links -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Felix I. Flores Rodriguez – Photography Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felix Flores Photography</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root{--bg:#1c1c1c;--bg2:#111;--fg:#fff;--muted:#cfcfcf;--card:#222;--accent:rgba(255,255,255,.15)}
-    *{box-sizing:border-box} body{font-family:Arial,sans-serif;margin:0;background:var(--bg);color:var(--fg)}
-    a{color:var(--fg);text-decoration:none}
-    nav{background:var(--bg2);padding:10px 20px;position:fixed;top:0;left:0;right:0;display:flex;gap:18px;z-index:1000}
-    nav a{cursor:pointer;opacity:.95} nav a:hover{opacity:1}
-    .section{margin-top:80px;display:none;padding:20px}.section.active{display:block}
-    h1,h2{margin:0 0 8px} p.lead{max-width:900px;color:#e9e9e9}
-    .hero{background:url('hero-home-3200.jpg') center/cover no-repeat;min-height:70vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:8px;overflow:hidden}
-    .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-    .hero-content{position:relative;z-index:1;padding:0 16px}
-    .hero-content h1{font-size:2.2rem;margin:.2rem 0}.hero-content p{font-size:1.1rem;margin:.2rem 0}
-    .btn{display:inline-block;padding:.7rem 1.2rem;background:var(--accent);border-radius:6px}
-    .btn:hover{background:rgba(255,255,255,.25)}
-    .about{max-width:900px;margin:18px auto 0;padding:0 4px;line-height:1.55}
-    .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
-    .thumb{background:var(--card);border-radius:8px;overflow:hidden}
-    .thumb img{width:100%;height:auto;display:block;transition:transform .25s ease}
-    .thumb img:hover{transform:scale(1.03)}
-    .more{margin-top:10px}
-    .blog-post{margin:16px auto;max-width:800px;padding:20px;background:#2c2c2c;border-radius:8px;cursor:pointer}
-    .blog-post:hover{background:#3a3a3a}.blog-post h3{margin:0}.blog-content{display:none;margin-top:10px}
-    footer{padding:24px 20px;color:#bbb;text-align:center}
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
+
+<!-- Navigation -->
+<header>
   <nav>
-    <a onclick="showSection('home')">Home</a>
-    <a onclick="showSection('wildhorses')">Wild Horses</a>
-    <a onclick="showSection('ukquiet')">UK Quiet</a>
-    <a onclick="showSection('waterfalls')">Waterfalls</a>
-    <a onclick="showSection('seascape')">Seascapes</a>
-    <a onclick="showSection('engure')">Engure Seascape</a>
-    <a onclick="showSection('blog')">Blog</a>
-    <a onclick="showSection('newsletter')">Newsletter</a>
-    <a onclick="showSection('contact')">Contact</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#galleries">Galleries</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
+</header>
 
-  <!-- HOME -->
-  <div id="home" class="section active">
-    <div class="hero">
-      <div class="hero-content">
-        <h1>Felix I. Flores Rodriguez</h1>
-        <p>Quiet stories in stillness and motion</p>
-        <a href="#" class="btn" onclick="showSection('wildhorses')">View Work</a>
-      </div>
-    </div>
-    <section class="about">
-      <h2>About</h2>
-      <p class="lead">Hello and welcome. I’m Felix — photographer, observer, and storyteller. I create work that values stillness, honest moments, and a sense of place. Here you’ll find selected series — wild horses, quiet UK landscapes, waterfalls, and seascapes — presented simply and clearly.</p>
-    </section>
-  </div>
+<!-- Home Section -->
+<section id="home">
+  <h1>Felix Flores Photography</h1>
+  <p>Quiet images. Clear intent. Crafted for print.</p>
+</section>
 
-  <!-- WILD HORSES -->
-  <div id="wildhorses" class="section">
-    <h2>Wild Horses</h2>
-    <p class="lead">Captured in Latvia’s Liellupe Meadows — raw beauty, tension, and quiet moments from freely roaming herds.</p>
-    <div class="thumbs">
-      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild1.jpg" alt="Wild Horses 1"></a></div>
-      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild2.jpg" alt="Wild Horses 2"></a></div>
-      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild3.jpg" alt="Wild Horses 3"></a></div>
-      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild4.jpg" alt="Wild Horses 4"></a></div>
-      <div class="thumb"><a href="wild-horses/index.html"><img src="wild-horses/wild5.jpg" alt="Wild Horses 5"></a></div>
-    </div>
-    <p class="more"><a href="wild-horses/index.html">View full gallery →</a></p>
-  </div>
+<!-- Galleries Section -->
+<section id="galleries">
+  <h2>Galleries</h2>
+  <ul>
+    <li><a href="wild-horses/">Wild Horses</a></li>
+    <li><a href="uk-quiet/">UK Quiet</a></li>
+    <li><a href="waterfalls/">Waterfalls</a></li>
+    <li><a href="seascapes/">Seascapes</a></li>
+    <li><a href="engure/">Engure</a></li>
+  </ul>
+</section>
 
-  <!-- UK QUIET -->
-  <div id="ukquiet" class="section">
-    <h2>UK Quiet</h2>
-    <p class="lead">North Yorkshire coast and countryside — solitude, muted tones, and timeless character.</p>
-    <div class="thumbs">
-      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk1.jpg" alt="UK Quiet 1"></a></div>
-      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk2.jpg" alt="UK Quiet 2"></a></div>
-      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk3.jpg" alt="UK Quiet 3"></a></div>
-      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk4.jpg" alt="UK Quiet 4"></a></div>
-      <div class="thumb"><a href="uk-quiet/index.html"><img src="uk-quiet/uk5.jpg" alt="UK Quiet 5"></a></div>
-    </div>
-    <p class="more"><a href="uk-quiet/index.html">View full gallery →</a></p>
-  </div>
+<!-- Blog Section -->
+<section id="blog">
+  <h2>Blog</h2>
+  <p>Coming soon.</p>
+</section>
 
-  <!-- WATERFALLS -->
-  <div id="waterfalls" class="section">
-    <h2>Waterfalls</h2>
-    <p class="lead">Movement and stillness — long-exposure studies of cascading water, framed with care.</p>
-    <div class="thumbs">
-      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall1.jpg" alt="Waterfall 1"></a></div>
-      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall2.jpg" alt="Waterfall 2"></a></div>
-      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall3.jpg" alt="Waterfall 3"></a></div>
-      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall4.jpg" alt="Waterfall 4"></a></div>
-      <div class="thumb"><a href="waterfalls/index.html"><img src="waterfalls/waterfall5.jpg" alt="Waterfall 5"></a></div>
-    </div>
-    <p class="more"><a href="waterfalls/index.html">View full gallery →</a></p>
-  </div>
+<!-- Newsletter Section -->
+<section id="newsletter">
+  <h2>Newsletter</h2>
+  <p>Subscribe for updates and behind-the-scenes stories.</p>
+</section>
 
-  <!-- SEASCAPES -->
-  <div id="seascape" class="section">
-    <h2>Seascapes</h2>
-    <p class="lead">From calm horizons to crashing waves — changing moods of the sea.</p>
-    <div class="thumbs">
-      <div class="thumb"><a href="seascapes/index.html"><img src="seascapes/seascape1.jpg" alt="Seascape 1"></a></div>
-      <div class="thumb"><a href="seascapes/index.html"><img src="seascapes/seascape2.jpg" alt="Seascape 2"></a></div>
-      <div class="thumb"><a href="seascapes/index.html"><img src="seascapes/seascape3.jpg" alt="Seascape 3"></a></div>
-      <div class="thumb"><a href="seascapes/index.html"><img src="seascapes/seascape4.jpg" alt="Seascape 4"></a></div>
-      <div class="thumb"><a href="seascapes/index.html"><img src="seascapes/seascape5.jpg" alt="Seascape 5"></a></div>
-    </div>
-    <p class="more"><a href="seascapes/index.html">View full gallery →</a></p>
-  </div>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: contact@felixfloresphoto.com</p>
+</section>
 
-  <!-- ENGURE -->
-  <div id="engure" class="section">
-    <h2>Engure Seascape</h2>
-    <p class="lead">Quiet waters and maritime textures from Engure port, Latvia.</p>
-    <div class="thumbs">
-      <div class="thumb"><a href="engure/index.html"><img src="engure/engure1.jpg" alt="Engure 1"></a></div>
-      <div class="thumb"><a href="engure/index.html"><img src="engure/engure2.jpg" alt="Engure 2"></a></div>
-      <div class="thumb"><a href="engure/index.html"><img src="engure/engure3.jpg" alt="Engure 3"></a></div>
-      <div class="thumb"><a href="engure/index.html"><img src="engure/engure4.jpg" alt="Engure 4"></a></div>
-      <div class="thumb"><a href="engure/index.html"><img src="engure/engure5.jpg" alt="Engure 5"></a></div>
-    </div>
-    <p class="more"><a href="engure/index.html">View full gallery →</a></p>
-  </div>
+<!-- Footer -->
+<footer>
+  <p>&copy; <span id="year"></span> Felix Flores Photography</p>
+</footer>
 
-  <!-- BLOG -->
-  <div id="blog" class="section">
-    <h2>Blog</h2>
-    <p class="lead">Insights from the field — click a title to read the full post.</p>
-    <div class="blog-post" onclick="toggleBlogContent(this)">
-      <h3>How to Create Meaning with Your Photography</h3>
-      <div class="blog-content">
-        <p>Photography isn’t just about light and composition — it’s about connection. Here’s how to make your work resonate with purpose and story.</p>
-        <p>– Felix I. Flores Rodriguez</p>
-      </div>
-    </div>
-    <div class="blog-post" onclick="toggleBlogContent(this)">
-      <h3>How I Capture Wild Horses Without Disturbing Them</h3>
-      <div class="blog-content">
-        <p>I scout quietly from a distance before shooting...</p>
-        <p>– Felix I. Flores</p>
-      </div>
-    </div>
-    <div class="blog-post" onclick="toggleBlogContent(this)">
-      <h3>Why I Photograph in Black and White</h3>
-      <div class="blog-content">
-        <p>Black and white strips an image to its essence...</p>
-        <p>– Felix I. Flores</p>
-      </div>
-    </div>
-    <div class="blog-post" onclick="toggleBlogContent(this)">
-      <h3>The Moment I Knew Photography Was My Voice</h3>
-      <div class="blog-content">
-        <p>It wasn’t a perfect photo — it was an honest one...</p>
-        <p>That moment told me — this is how I speak. – Felix I. Flores</p>
-      </div>
-    </div>
-  </div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-  <!-- NEWSLETTER -->
-  <div id="newsletter" class="section">
-    <h2>Join My Newsletter</h2>
-    <p class="lead">Get new photo essays, field notes, and print updates.</p>
-    <form action="YOUR-NEWSLETTER-SERVICE-URL" method="post" style="max-width:520px">
-      <label for="email">Email Address</label><br>
-      <input type="email" id="email" name="EMAIL" placeholder="Your email address" required
-             style="width:100%;padding:10px;border-radius:6px;border:1px solid #444;background:#2b2b2b;color:#fff;margin:8px 0">
-      <input type="hidden" name="NAME" value="Felix I. Flores Rodriguez" />
-      <button type="submit" class="btn">Subscribe</button>
-    </form>
-  </div>
-
-  <!-- CONTACT -->
-  <div id="contact" class="section">
-    <h2>Contact</h2>
-    <p class="lead">Reach me at: <a href="mailto:felixfloresrodriguezphoto@gmail.com">felixfloresrodriguezphoto@gmail.com</a></p>
-  </div>
-
-  <footer>&copy; <script>document.write(new Date().getFullYear())</script> Felix I. Flores Rodriguez</footer>
-
-  <script>
-    function showSection(id){
-      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo(0,0);
-    }
-    function toggleBlogContent(post){
-      const c=post.querySelector('.blog-content');
-      const o=c.style.display==='block';
-      document.querySelectorAll('.blog-content').forEach(x=>x.style.display='none');
-      if(!o)c.style.display='block';
-    }
-  </script>
 </body>
 </html>
