@@ -33,15 +33,11 @@
       color: #fff;
     }
 
-    /* Home section with overlay */
+    /* Home section with background behind text */
     #home {
       position: relative;
       background: url('hero-home-3200.jpg') no-repeat center center;
       background-size: cover;
-      background-image: image-set(
-        url('hero-home-1200.jpg') 1x,
-        url('hero-home-2400.jpg') 2x
-      );
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -94,7 +90,7 @@
 
     .section {
       margin-top: calc(var(--nav-height) + 20px);
-      display: none;
+      display: none; /* only the active page shows */
       scroll-margin-top: calc(var(--nav-height) + 10px);
     }
     .section.active { display: block; }
@@ -137,10 +133,7 @@
       z-index: 9999;
       cursor: zoom-out;
     }
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-    }
+    #lightbox img { max-width: 90%; max-height: 90%; }
 
     .no-gatekeepers {
       font-size: 1.6em;
@@ -178,7 +171,7 @@
     <a href="#contact" onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <!-- HOME -->
+  <!-- HOME (intro + No GateKeepers only here) -->
   <div id="home" class="section active">
     <h1>Felix I. Flores – Photography Portfolio</h1>
     <p>Hello and welcome to my site. I am Felix, a photographer, observer, and storyteller. My work has changed. I no longer just take photos. I create them with purpose, patience, and presence. I have grown in technique, but more importantly, I have learned to see. To slow down. To frame not just what is there, but what it means. Each image now reflects more than a moment. It reflects intent. Stillness. Story. This portfolio marks that shift. It is not just about what I saw. It is about how I chose to show it. This is where my craft became a voice.</p>
@@ -302,14 +295,24 @@
 
     function routeFromHash() {
       const hash = window.location.hash || '#home';
+
       if (hash.startsWith('#post/')) {
         const slug = decodeURIComponent(hash.replace('#post/', ''));
         openPost(slug);
         return;
       }
+
       const id = hash.substring(1);
-      if (document.getElementById(id)) showSection(id);
-      else showSection('home');
+      if (id === 'blog') {
+        openBlog(); // render list when landing directly on #blog
+        return;
+      }
+
+      if (document.getElementById(id)) {
+        showSection(id);
+      } else {
+        showSection('home');
+      }
     }
 
     window.addEventListener('load', routeFromHash);
@@ -340,7 +343,6 @@
     });
 
     /* ---------- Blog Data & Rendering ---------- */
-    // Edit or add posts here. Use unique slugs.
     const POSTS = [
       {
         slug: "why-i-create-not-just-capture",
@@ -374,20 +376,17 @@
     ];
 
     function formatDate(iso) {
-      // Simple readable date: Aug 16, 2025
-      const d = new Date(iso.replace(/-/g,'/')); // robust parsing
+      const d = new Date(iso.replace(/-/g,'/'));
       return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
     }
 
     function openBlog() {
-      // Show list, hide single post
       document.getElementById('blog-post').style.display = 'none';
       const list = document.getElementById('blog-list');
       list.innerHTML = '';
 
-      // Render cards
       POSTS
-        .slice() // copy
+        .slice()
         .sort((a,b) => b.date.localeCompare(a.date))
         .forEach(post => {
           const card = document.createElement('div');
@@ -402,40 +401,31 @@
         });
 
       document.getElementById('blog-list').style.display = '';
-      showSection('blog'); // ensure Blog section shows
+      showSection('blog');
     }
 
     function openPost(slug) {
       const post = POSTS.find(p => p.slug === slug);
       if (!post) {
-        // Fallback if slug invalid: go back to list
         history.replaceState(null, '', '#blog');
         openBlog();
         return;
       }
-      // Fill post
       document.getElementById('post-title').textContent = post.title;
       document.getElementById('post-meta').textContent = `${formatDate(post.date)} · ${post.tags.join(', ')}`;
       document.getElementById('post-body').innerHTML = post.body;
 
-      // Toggle views
       document.getElementById('blog-list').style.display = 'none';
       document.getElementById('blog-post').style.display = '';
 
-      // Show blog section and set URL
       showSection('blog');
       history.replaceState(null, '', '#post/' + encodeURIComponent(slug));
     }
 
-    // Initialize blog list when Blog is opened directly
-    // and also on load if hash is #blog.
+    // Render Blog list when clicking nav
     (function initBlogAutoRender() {
       const navBlog = document.querySelector('nav a[href="#blog"]');
-      if (navBlog) {
-        navBlog.addEventListener('click', () => {
-          openBlog();
-        });
-      }
+      if (navBlog) navBlog.addEventListener('click', openBlog);
     })();
   </script>
 </body>
