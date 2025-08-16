@@ -1,60 +1,34 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wild Horses — Gallery | Felix I. Flores</title>
-  <meta name="description" content="Free-roaming horses — strength, hierarchy, and quiet moments." />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <style>
-    :root { --maxw: 1200px; --fg:#e5e7eb; --muted:#94a3b8; --bg:#0b0f19; --panel:#0e1428; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; color: var(--fg); background: var(--bg); }
-    header { position: sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(9,12,20,.6); border-bottom:1px solid rgba(148,163,184,.15); }
-    .inner { max-width: var(--maxw); margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
-    header a { color: var(--fg); text-decoration: none; margin-right: 16px; }
-    main { max-width: var(--maxw); margin: 24px auto 64px; padding: 0 16px; }
-    h1 { margin: 24px 0 8px; font-size: clamp(24px,4.2vw,40px); }
-    p.muted { color: var(--muted); margin-top: 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
-    .grid a { display:block; border:1px solid rgba(148,163,184,.15); border-radius: 12px; overflow: hidden; background: var(--panel); }
-    .grid img { width: 100%; height: 220px; object-fit: cover; display:block; }
-    footer { border-top: 1px solid rgba(148,163,184,.15); margin-top: 40px; padding: 16px; color: var(--muted); font-size: 14px; text-align:center; }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="inner">
-      <div>
-        <a href="../">Home</a>
-        <a href="../#galleries">Galleries</a>
-        <a href="../#blog">Blog</a>
-        <a href="../#newsletter">Newsletter</a>
-        <a href="../#contact">Contact</a>
-      </div>
-      <strong>Wild Horses</strong>
-    </div>
-  </header>
+<!-- rebuild: standalone-home -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felix I. Flores – Photography Portfolio</title>
+<style>
+  body{font-family:Arial,sans-serif;margin:0;background:linear-gradient(to bottom,#1c1c1c,#444);color:#fff}
+  nav{background:#111;position:fixed;top:0;left:0;right:0;display:flex;gap:18px;padding:10px 20px;z-index:1000}
+  nav a{color:#fff;text-decoration:none}
+  .spacer{height:80px}
+  #home{position:relative;min-height:100vh;background:url('hero-home-3200.jpg') center/cover no-repeat;
+        display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+  #home::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5)}
+  #home h1,#home p{position:relative;z-index:1;padding:10px;border-radius:5px;max-width:800px;margin:12px 20px}
+  .no-gk{font-size:1.6em;font-weight:bold;text-align:center;margin-top:12px}
+</style>
+</head><body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="wild-horses/">Wild Horses</a>
+  <a href="uk-quiet/">UK Quiet</a>
+  <a href="waterfalls/">Waterfalls</a>
+  <a href="seascapes/">Seascapes</a>
+  <a href="blog/">Blog</a>
+  <a href="newsletter/">Newsletter</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<div class="spacer"></div>
+<section id="home">
+  <h1>Felix I. Flores – Photography Portfolio</h1>
+  <p>Hello and welcome to my site. I am Felix, a photographer, observer, and storyteller. My work has changed. I no longer just take photos. I create them with purpose, patience, and presence. I have grown in technique, but more importantly, I have learned to see. To slow down. To frame not just what is there, but what it means. Each image now reflects more than a moment. It reflects intent. Stillness. Story. This portfolio marks that shift. It is not just about what I saw. It is about how I chose to show it. This is where my craft became a voice.</p>
+  <p class="no-gk">No GateKeepers</p>
+</section>
+</body></html>
 
-  <main>
-    <h1>Wild Horses</h1>
-    <p class="muted">They move like wind yet carry the weight of history. I follow storms and silence, chasing moments that vanish as fast as they appear.</p>
-
-    <div class="grid">
-      <a href="./wild1.jpg" class="glightbox" data-gallery="wh" data-title="Wild Horses — Frame 1"><img src="./wild1.jpg" alt="Wild Horse 1"></a>
-      <a href="./wild2.jpg" class="glightbox" data-gallery="wh" data-title="Wild Horses — Frame 2"><img src="./wild2.jpg" alt="Wild Horse 2"></a>
-      <a href="./wild3.jpg" class="glightbox" data-gallery="wh" data-title="Wild Horses — Frame 3"><img src="./wild3.jpg" alt="Wild Horse 3"></a>
-      <a href="./wild4.jpg" class="glightbox" data-gallery="wh" data-title="Wild Horses — Frame 4"><img src="./wild4.jpg" alt="Wild Horse 4"></a>
-      <a href="./wild5.jpg" class="glightbox" data-gallery="wh" data-title="Wild Horses — Frame 5"><img src="./wild5.jpg" alt="Wild Horse 5"></a>
-    </div>
-
-    <footer>© Felix I. Flores — Wild Horses</footer>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function(){ GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true }); });
-  </script>
-</body>
-</html>
