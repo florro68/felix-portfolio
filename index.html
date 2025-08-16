@@ -8,14 +8,16 @@
   <!-- Mobile + SEO -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Photography by Felix I. Flores — wild horses, UK quiet landscapes, waterfalls, and seascapes. Intent, stillness, story.">
-  <link rel="canonical" href="https://felixfloresphoto.com/">
+  <link rel="canonical" href="https://florro68.github.io/felix-portfolio/">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Felix I. Flores – Photography Portfolio">
   <meta property="og:description" content="Intent, stillness, story — wild horses, UK quiet, waterfalls, seascapes.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="hero-home-1200.jpg">
+  <meta property="og:url" content="https://florro68.github.io/felix-portfolio/">
+  <meta property="og:image" content="https://florro68.github.io/felix-portfolio/hero-home-1200.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Performance: preload hero -->
   <link rel="preload" as="image"
@@ -92,12 +94,11 @@
       margin-top: calc(var(--nav-height) + 20px);
       display: none;
       scroll-margin-top: calc(var(--nav-height) + 10px);
-      /* Fill viewport height on non-Home pages */
       min-height: calc(100vh - var(--nav-height) - 20px);
     }
     .section.active { display: block; }
 
-    /* Force-hide non-active sections even if something conflicts */
+    /* Force-hide non-active sections */
     .section { display: none !important; }
     .section.active { display: block !important; }
 
@@ -192,7 +193,10 @@
   <!-- WILD HORSES -->
   <div id="wildhorses" class="section" hidden>
     <h2>Wild Horses</h2>
-    <p class="image-container">Dominance, nurture, and the space between.</p>
+    <p class="image-container">
+      Wild horses move with purpose. I photograph the hierarchy—who leads, who yields, who protects.
+      I wait for brief calm and small gestures. I work low with clean backgrounds and build one image at a time.
+    </p>
     <div class="gallery">
       <img src="wild-horses/wild1.jpg" alt="Wild Horse 1" loading="lazy" decoding="async">
       <img src="wild-horses/wild2.jpg" alt="Wild Horse 2" loading="lazy" decoding="async">
@@ -205,7 +209,10 @@
   <!-- UK QUIET -->
   <div id="ukquiet" class="section" hidden>
     <h2>UK Quiet</h2>
-    <p class="image-container">Solitude, legacy, and quiet storytelling.</p>
+    <p class="image-container">
+      Places where noise drops and detail matters. I arrive early when streets breathe and settle.
+      I build frames from edges, lines, and shadow. Color stays modest so structure can speak.
+    </p>
     <div class="gallery">
       <img src="uk-quiet/uk1.jpg" alt="UK Quiet 1" loading="lazy" decoding="async">
       <img src="uk-quiet/uk2.jpg" alt="UK Quiet 2" loading="lazy" decoding="async">
@@ -218,7 +225,10 @@
   <!-- WATERFALLS -->
   <div id="waterfalls" class="section" hidden>
     <h2>Waterfalls</h2>
-    <p class="image-container">Texture, motion, and controlled light.</p>
+    <p class="image-container">
+      I balance motion with texture. Foam lines guide the eye through the frame.
+      I guard wet rock highlights and deep shadows. Soft light, steady footing, deliberate timing.
+    </p>
     <div class="gallery">
       <img src="waterfalls/waterfall1.jpg" alt="Waterfall 1" loading="lazy" decoding="async">
       <img src="waterfalls/waterfall2.jpg" alt="Waterfall 2" loading="lazy" decoding="async">
@@ -231,7 +241,10 @@
   <!-- SEASCAPES -->
   <div id="seascapes" class="section" hidden>
     <h2>Seascapes</h2>
-    <p class="image-container">Minimal color, quiet waters, open space.</p>
+    <p class="image-container">
+      I reduce the scene to horizon, shape, and tone. I wait for weather windows, not landmarks.
+      Few elements, room to breathe, quiet color. Exact horizons; time smooths the water.
+    </p>
     <div class="gallery">
       <img src="seascapes/seascape1.jpg" alt="Seascape 1" loading="lazy" decoding="async">
       <img src="seascapes/seascape2.jpg" alt="Seascape 2" loading="lazy" decoding="async">
