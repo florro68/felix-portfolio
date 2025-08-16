@@ -92,12 +92,19 @@
       margin-top: calc(var(--nav-height) + 20px);
       display: none;
       scroll-margin-top: calc(var(--nav-height) + 10px);
+      /* Fill viewport height on non-Home pages */
+      min-height: calc(100vh - var(--nav-height) - 20px);
     }
     .section.active { display: block; }
 
     /* Force-hide non-active sections even if something conflicts */
     .section { display: none !important; }
     .section.active { display: block !important; }
+
+    /* Clean background for all non-Home pages */
+    .section:not(#home) {
+      background: linear-gradient(to bottom, #1c1c1c, #444);
+    }
 
     .gallery {
       display: flex;
@@ -182,18 +189,18 @@
     <p class="no-gatekeepers">No GateKeepers</p>
   </div>
 
- <!-- WILD HORSES -->
-<div id="wildhorses" class="section" hidden>
-  <h2>Wild Horses</h2>
-  <p class="image-container">Dominance, nurture, and the space between.</p>
-  <div class="gallery">
-    <img src="wild-horses/wild1.jpg" alt="Wild Horse 1" loading="lazy" decoding="async">
-    <img src="wild-horses/wild2.jpg" alt="Wild Horse 2" loading="lazy" decoding="async">
-    <img src="wild-horses/wild3.jpg" alt="Wild Horse 3" loading="lazy" decoding="async">
-    <img src="wild-horses/wild4.jpg" alt="Wild Horse 4" loading="lazy" decoding="async">
-    <img src="wild-horses/wild5.jpg" alt="Wild Horse 5" loading="lazy" decoding="async">
+  <!-- WILD HORSES -->
+  <div id="wildhorses" class="section" hidden>
+    <h2>Wild Horses</h2>
+    <p class="image-container">Dominance, nurture, and the space between.</p>
+    <div class="gallery">
+      <img src="wild-horses/wild1.jpg" alt="Wild Horse 1" loading="lazy" decoding="async">
+      <img src="wild-horses/wild2.jpg" alt="Wild Horse 2" loading="lazy" decoding="async">
+      <img src="wild-horses/wild3.jpg" alt="Wild Horse 3" loading="lazy" decoding="async">
+      <img src="wild-horses/wild4.jpg" alt="Wild Horse 4" loading="lazy" decoding="async">
+      <img src="wild-horses/wild5.jpg" alt="Wild Horse 5" loading="lazy" decoding="async">
+    </div>
   </div>
-</div>
 
   <!-- UK QUIET -->
   <div id="ukquiet" class="section" hidden>
@@ -289,13 +296,21 @@
     }
 
     function showSection(id) {
+      // Hide all sections, show only requested
       document.querySelectorAll('.section').forEach(s => {
         const isActive = (s.id === id);
         s.classList.toggle('active', isActive);
-        s.hidden = !isActive; // extra guard: non-active sections are hidden at DOM level
+        s.hidden = !isActive; // DOM-level hide to prevent any bleed-through
       });
+
+      // Close lightbox if it's open
+      if (typeof closeLightbox === 'function') closeLightbox();
+
+      // Update URL + nav
       history.replaceState(null, '', '#' + id);
       setNavState(id);
+
+      // Jump to top
       window.scrollTo(0, 0);
     }
 
@@ -436,5 +451,3 @@
   </script>
 </body>
 </html>
-
-
