@@ -90,10 +90,14 @@
 
     .section {
       margin-top: calc(var(--nav-height) + 20px);
-      display: none; /* only the active page shows */
+      display: none;
       scroll-margin-top: calc(var(--nav-height) + 10px);
     }
     .section.active { display: block; }
+
+    /* Force-hide non-active sections even if something conflicts */
+    .section { display: none !important; }
+    .section.active { display: block !important; }
 
     .gallery {
       display: flex;
@@ -166,7 +170,7 @@
     <a href="#ukquiet" onclick="showSection('ukquiet')">UK Quiet</a>
     <a href="#waterfalls" onclick="showSection('waterfalls')">Waterfalls</a>
     <a href="#seascapes" onclick="showSection('seascapes')">Seascapes</a>
-    <a href="#blog" onclick="showSection('blog')">Blog</a>
+    <a href="#blog" onclick="openBlog()">Blog</a>
     <a href="#newsletter" onclick="showSection('newsletter')">Newsletter</a>
     <a href="#contact" onclick="showSection('contact')">Contact</a>
   </nav>
@@ -179,7 +183,7 @@
   </div>
 
   <!-- WILD HORSES -->
-  <div id="wildhorses" class="section">
+  <div id="wildhorses" class="section" hidden>
     <h2>Wild Horses</h2>
     <p class="image-container">Dominance, nurture, and the space between.</p>
     <div class="gallery">
@@ -192,7 +196,7 @@
   </div>
 
   <!-- UK QUIET -->
-  <div id="ukquiet" class="section">
+  <div id="ukquiet" class="section" hidden>
     <h2>UK Quiet</h2>
     <p class="image-container">Solitude, legacy, and quiet storytelling.</p>
     <div class="gallery">
@@ -205,7 +209,7 @@
   </div>
 
   <!-- WATERFALLS -->
-  <div id="waterfalls" class="section">
+  <div id="waterfalls" class="section" hidden>
     <h2>Waterfalls</h2>
     <p class="image-container">Texture, motion, and controlled light.</p>
     <div class="gallery">
@@ -218,7 +222,7 @@
   </div>
 
   <!-- SEASCAPES -->
-  <div id="seascapes" class="section">
+  <div id="seascapes" class="section" hidden>
     <h2>Seascapes</h2>
     <p class="image-container">Minimal color, quiet waters, open space.</p>
     <div class="gallery">
@@ -231,7 +235,7 @@
   </div>
 
   <!-- BLOG (list + post view) -->
-  <div id="blog" class="section">
+  <div id="blog" class="section" hidden>
     <h2>Blog</h2>
     <div class="posts">
       <div id="blog-list"></div>
@@ -249,7 +253,7 @@
   </div>
 
   <!-- NEWSLETTER -->
-  <div id="newsletter" class="section">
+  <div id="newsletter" class="section" hidden>
     <h2>Newsletter</h2>
     <div class="image-container">
       <p>Get field notes, new work, and print updates.</p>
@@ -265,7 +269,7 @@
   </div>
 
   <!-- CONTACT -->
-  <div id="contact" class="section">
+  <div id="contact" class="section" hidden>
     <h2>Contact</h2>
     <p class="image-container">You can reach me at <strong>felixfloresrodriguezphoto@gmail.com</strong>.</p>
     <p class="image-container">Prefer updates? Go to <a href="#newsletter" onclick="showSection('newsletter')">Newsletter →</a></p>
@@ -285,9 +289,11 @@
     }
 
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      const target = document.getElementById(id);
-      if (target) target.classList.add('active');
+      document.querySelectorAll('.section').forEach(s => {
+        const isActive = (s.id === id);
+        s.classList.toggle('active', isActive);
+        s.hidden = !isActive; // extra guard: non-active sections are hidden at DOM level
+      });
       history.replaceState(null, '', '#' + id);
       setNavState(id);
       window.scrollTo(0, 0);
