@@ -181,6 +181,9 @@
     <a href="#blog" onclick="openBlog()">Blog</a>
     <a href="#newsletter" onclick="showSection('newsletter')">Newsletter</a>
     <a href="#contact" onclick="showSection('contact')">Contact</a>
+    <!-- New external links -->
+    <a href="https://flo-pic.picfair.com/" target="_blank" rel="noopener">Picfair Shop</a>
+    <a href="https://instagram.com/felixfloresphoto/" target="_blank" rel="noopener">Instagram</a>
   </nav>
 
   <!-- HOME (intro + No GateKeepers only here) -->
@@ -291,7 +294,7 @@
   <!-- CONTACT -->
   <div id="contact" class="section" hidden>
     <h2>Contact</h2>
-    <p class="image-container">You can reach me at <strong>felixfloresrodriguezphoto@gmail.com</strong>.</p>
+    <p class="image-container">You can reach me at <strong>contact@felixfloresrodriguezphoto.com</strong>.</p>
     <p class="image-container">Prefer updates? Go to <a href="#newsletter" onclick="showSection('newsletter')">Newsletter →</a></p>
   </div>
 
@@ -462,5 +465,16 @@
       if (navBlog) navBlog.addEventListener('click', openBlog);
     })();
   </script>
+
+  <!-- Footer with domain + quick links -->
+  <footer style="padding:16px 20px; color:#bbb; background:#111; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;">
+    <span>© <span id="y"></span> Felix I. Flores — <a href="https://felixfloresrodriguezphoto.com" target="_blank" rel="noopener" style="color:#bbb;">felixfloresrodriguezphoto.com</a></span>
+    <span style="display:flex; gap:12px;">
+      <a href="https://flo-pic.picfair.com/" target="_blank" rel="noopener" style="color:#bbb;">Picfair</a>
+      <a href="https://instagram.com/felixfloresphoto/" target="_blank" rel="noopener" style="color:#bbb;">Instagram</a>
+      <a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener" style="color:#bbb;">35mmc</a>
+    </span>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
