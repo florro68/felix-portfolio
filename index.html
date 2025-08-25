@@ -35,7 +35,7 @@
       color: #fff;
     }
 
-    /* Home section with background behind text */
+    /* Home */
     #home {
       position: relative;
       background: url('hero-home-3200.jpg') no-repeat center center;
@@ -47,138 +47,59 @@
       align-items: center;
       text-align: center;
     }
-    #home::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-    #home h1, #home p {
-      position: relative;
-      z-index: 2;
-      padding: 10px;
-      border-radius: 5px;
-    }
+    #home::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.5); z-index:1; }
+    #home h1, #home p { position:relative; z-index:2; padding:10px; border-radius:5px; }
 
-    h1, p {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+    h1, p { max-width:800px; margin:40px auto; padding:0 20px; }
 
     nav {
-      background-color: #111;
-      color: white;
-      padding: 10px 20px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      gap: 20px;
-      z-index: 1000;
-      height: var(--nav-height);
-      align-items: center;
-      flex-wrap: wrap;
+      background:#111; color:#fff; padding:10px 20px; position:fixed; top:0; width:100%;
+      display:flex; gap:20px; z-index:1000; height:var(--nav-height); align-items:center; flex-wrap:wrap;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-      line-height: 1.2;
-      padding: 4px 0;
-    }
-    nav a[aria-current="page"] { border-bottom: 2px solid #fff; }
+    nav a { color:#fff; text-decoration:none; cursor:pointer; line-height:1.2; padding:4px 0; }
+    nav a[aria-current="page"] { border-bottom:2px solid #fff; }
 
     .section {
       margin-top: calc(var(--nav-height) + 20px);
-      display: none;
+      display:none;
       scroll-margin-top: calc(var(--nav-height) + 10px);
       min-height: calc(100vh - var(--nav-height) - 20px);
-    }
-    .section.active { display: block; }
-
-    /* Force-hide non-active sections */
-    .section { display: none !important; }
-    .section.active { display: block !important; }
-
-    /* Clean background for all non-Home pages */
-    .section:not(#home) {
       background: linear-gradient(to bottom, #1c1c1c, #444);
     }
+    .section.active { display:block; }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px auto;
-      max-width: 1200px;
-      padding: 0 20px;
-      justify-content: center;
+      display:flex; flex-wrap:wrap; gap:20px; margin:30px auto; max-width:1200px; padding:0 20px; justify-content:center;
     }
-    .gallery img {
-      max-width: 100%;
-      height: auto;
-      border: 3px solid #ccc;
-      background: #fff;
-      cursor: pointer;
-      transition: transform 0.2s;
-      image-rendering: auto;
-    }
-    .gallery img:hover { transform: scale(1.02); }
+    .gallery img { max-width:100%; height:auto; border:3px solid #ccc; background:#fff; cursor:pointer; transition:transform .2s; image-rendering:auto; }
+    .gallery img:hover { transform:scale(1.02); }
 
-    .image-container {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .image-container { max-width:700px; margin:0 auto; padding:0 20px; }
 
     #lightbox {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      cursor: zoom-out;
+      position:fixed; inset:0; width:100%; height:100%; background:rgba(0,0,0,.9);
+      display:none; align-items:center; justify-content:center; z-index:9999; cursor:zoom-out;
     }
-    #lightbox img { max-width: 90%; max-height: 90%; }
+    #lightbox img { max-width:90%; max-height:90%; }
 
-    .no-gatekeepers {
-      font-size: 1.6em;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 12px;
-    }
-
+    .no-gatekeepers { font-size:1.6em; font-weight:bold; text-align:center; margin-top:12px; }
     #home h1 { font-size: clamp(1.6rem, 4vw, 3rem); }
-    #home p { font-size: clamp(1rem, 2.2vw, 1.2rem); }
+    #home p  { font-size: clamp(1rem,  2.2vw, 1.2rem); }
 
-    /* Blog styles */
-    .posts { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
-    .post-card { border: 1px solid #2a2a2a; background:#1b1b1b; padding: 16px; border-radius: 8px; margin-bottom: 16px; }
-    .post-card h3 { margin: 0 0 8px; }
-    .post-card p { margin: 8px 0 0; }
-    .post-meta { color:#bbb; font-size: 0.9rem; margin-bottom: 8px; }
-    .post-body { line-height: 1.7; }
-    .linklike { color: #fff; text-decoration: underline; cursor: pointer; }
+    /* Blog */
+    .posts { max-width:900px; margin:0 auto; padding:0 20px 40px; }
+    .post-card { border:1px solid #2a2a2a; background:#1b1b1b; padding:16px; border-radius:8px; margin-bottom:16px; }
+    .post-card h3 { margin:0 0 8px; }
+    .post-card p { margin:8px 0 0; }
+    .post-meta { color:#bbb; font-size:.9rem; margin-bottom:8px; }
+    .post-body { line-height:1.7; }
+    .linklike { color:#fff; text-decoration:underline; cursor:pointer; }
 
-    /* Highlight links (35mmc) */
-    .highlight-link {
-      color: #FFD166;
-      text-decoration: none;
-    }
-    .highlight-link:hover {
-      color: #FFFFFF;
-      text-decoration: underline;
-    }
+    /* High-contrast 35mmc links */
+    .highlight-link { color:#FFD166; text-decoration:none; }
+    .highlight-link:hover { color:#FFF; text-decoration:underline; }
 
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; animation: none !important; }
-    }
+    @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
   </style>
 </head>
 <body>
@@ -191,7 +112,6 @@
     <a href="#blog" onclick="openBlog()">Blog</a>
     <a href="#newsletter" onclick="showSection('newsletter')">Newsletter</a>
     <a href="#contact" onclick="showSection('contact')">Contact</a>
-    <!-- New external links -->
     <a href="https://flo-pic.picfair.com/" target="_blank" rel="noopener">Picfair Shop</a>
     <a href="https://instagram.com/felixfloresphoto/" target="_blank" rel="noopener">Instagram</a>
   </nav>
@@ -201,6 +121,70 @@
     <h1>Felix I. Flores – Photography Portfolio</h1>
     <p>Hello and welcome to my site. I am Felix, a photographer, observer, and storyteller. My work has changed. I no longer just take photos. I create them with purpose, patience, and presence. I have grown in technique, but more importantly, I have learned to see. To slow down. To frame not just what is there, but what it means. Each image now reflects more than a moment. It reflects intent. Stillness. Story. This portfolio marks that shift. It is not just about what I saw. It is about how I chose to show it. This is where my craft became a voice.</p>
     <p class="no-gatekeepers">No GateKeepers</p>
+  </div>
+
+  <!-- WILD HORSES -->
+  <div id="wildhorses" class="section" hidden>
+    <h2>Wild Horses</h2>
+    <p class="image-container">
+      Wild horses move with purpose. I photograph the hierarchy—who leads, who yields, who protects.
+      I wait for brief calm and small gestures. I work low with clean backgrounds and build one image at a time.
+    </p>
+    <div class="gallery">
+      <img src="wild-horses/wild1.jpg" alt="Wild Horse 1" loading="lazy" decoding="async">
+      <img src="wild-horses/wild2.jpg" alt="Wild Horse 2" loading="lazy" decoding="async">
+      <img src="wild-horses/wild3.jpg" alt="Wild Horse 3" loading="lazy" decoding="async">
+      <img src="wild-horses/wild4.jpg" alt="Wild Horse 4" loading="lazy" decoding="async">
+      <img src="wild-horses/wild5.jpg" alt="Wild Horse 5" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- UK QUIET -->
+  <div id="ukquiet" class="section" hidden>
+    <h2>UK Quiet</h2>
+    <p class="image-container">
+      Places where noise drops and detail matters. I arrive early when streets breathe and settle.
+      I build frames from edges, lines, and shadow. Color stays modest so structure can speak.
+    </p>
+    <div class="gallery">
+      <img src="uk-quiet/uk1.jpg" alt="UK Quiet 1" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk2.jpg" alt="UK Quiet 2" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk3.jpg" alt="UK Quiet 3" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk4.jpg" alt="UK Quiet 4" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk5.jpg" alt="UK Quiet 5" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- WATERFALLS -->
+  <div id="waterfalls" class="section" hidden>
+    <h2>Waterfalls</h2>
+    <p class="image-container">
+      I balance motion with texture. Foam lines guide the eye through the frame.
+      I guard wet rock highlights and deep shadows. Soft light, steady footing, deliberate timing.
+    </p>
+    <div class="gallery">
+      <img src="waterfalls/waterfall1.jpg" alt="Waterfall 1" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall2.jpg" alt="Waterfall 2" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall3.jpg" alt="Waterfall 3" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall4.jpg" alt="Waterfall 4" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall5.jpg" alt="Waterfall 5" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- SEASCAPES -->
+  <div id="seascapes" class="section" hidden>
+    <h2>Seascapes</h2>
+    <p class="image-container">
+      I reduce the scene to horizon, shape, and tone. I wait for weather windows, not landmarks.
+      Few elements, room to breathe, quiet color. Exact horizons; time smooths the water.
+    </p>
+    <div class="gallery">
+      <img src="seascapes/seascape1.jpg" alt="Seascape 1" loading="lazy" decoding="async">
+      <img src="seascapes/seascape2.jpg" alt="Seascape 2" loading="lazy" decoding="async">
+      <img src="seascapes/seascape3.jpg" alt="Seascape 3" loading="lazy" decoding="async">
+      <img src="seascapes/seascape4.jpg" alt="Seascape 4" loading="lazy" decoding="async">
+      <img src="seascapes/seascape5.jpg" alt="Seascape 5" loading="lazy" decoding="async">
+    </div>
   </div>
 
   <!-- BLOG -->
@@ -237,9 +221,14 @@
     <p class="image-container">Prefer updates? Go to <a href="#newsletter" onclick="showSection('newsletter')">Newsletter →</a></p>
   </div>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <img src="" alt="Enlarged photo">
+  </div>
+
   <!-- Footer -->
   <footer style="padding:16px 20px; color:#bbb; background:#111; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;">
-    <span>© <span id="y"></span> Felix I. Flores — 
+    <span>© <span id="y"></span> Felix I. Flores —
       <a href="mailto:fifr68@proton.me" style="color:#bbb;">fifr68@proton.me</a>
     </span>
     <span style="display:flex; gap:12px;">
