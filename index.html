@@ -1,4 +1,4 @@
-<!-- rebuild: add-no-gatekeepers -->
+<!-- rebuild: add-no-gatekeepers --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,6 +166,10 @@
     .post-body { line-height: 1.7; }
     .linklike { color: #fff; text-decoration: underline; cursor: pointer; }
 
+    /* Soft gray link to match footer */
+    .soft-link { color:#bbb; text-decoration:none; }
+    .soft-link:hover { color:#fff; text-decoration:underline; }
+
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; }
     }
@@ -271,7 +275,7 @@
         </article>
         <p><a class="linklike" href="#blog" onclick="openBlog()">Back to all posts</a></p>
       </div>
-      <p><a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener">Read my articles on 35mmc →</a></p>
+      <p><a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener" class="soft-link">Read my articles on 35mmc →</a></p>
     </div>
   </div>
 
@@ -289,13 +293,16 @@
       style="height:500px;width:99%;border:none;"
       src="https://forms.zohopublic.eu/felixifloresphoto1/form/NewsletterSignup/formperma/GlGv9KxU6dQBc1-BL9LImnTd3tZ98Z1QJfhbXEWmlKI">
     </iframe>
+    <div class="image-container">
+      <p>Prefer email? <a href="mailto:fifr68@proton.me" class="soft-link">Subscribe via email</a>.</p>
+    </div>
   </div>
 
   <!-- CONTACT -->
   <div id="contact" class="section" hidden>
     <h2>Contact</h2>
-    <p class="image-container">You can reach me at <strong>contact@felixfloresrodriguezphoto.com</strong>.</p>
-    <p class="image-container">Prefer updates? Go to <a href="#newsletter" onclick="showSection('newsletter')">Newsletter →</a></p>
+    <p class="image-container">You can reach me at <strong><a href="mailto:fifr68@proton.me" class="soft-link">fifr68@proton.me</a></strong>.</p>
+    <p class="image-container">Prefer updates? Go to <a href="#newsletter" onclick="showSection('newsletter')" class="soft-link">Newsletter →</a></p>
   </div>
 
   <!-- LIGHTBOX -->
@@ -466,9 +473,9 @@
     })();
   </script>
 
-  <!-- Footer with domain + quick links -->
+  <!-- Footer with email + quick links -->
   <footer style="padding:16px 20px; color:#bbb; background:#111; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;">
-    <span>© <span id="y"></span> Felix I. Flores — <a href="https://felixfloresrodriguezphoto.com" target="_blank" rel="noopener" style="color:#bbb;">felixfloresrodriguezphoto.com</a></span>
+    <span>© <span id="y"></span> Felix I. Flores — <a href="mailto:fifr68@proton.me" style="color:#bbb;">fifr68@proton.me</a></span>
     <span style="display:flex; gap:12px;">
       <a href="https://flo-pic.picfair.com/" target="_blank" rel="noopener" style="color:#bbb;">Picfair</a>
       <a href="https://instagram.com/felixfloresphoto/" target="_blank" rel="noopener" style="color:#bbb;">Instagram</a>
