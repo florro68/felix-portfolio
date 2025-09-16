@@ -16,8 +16,16 @@
   <meta property="og:description" content="Intent, stillness, story — wild horses, UK quiet, waterfalls, seascapes.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://florro68.github.io/felix-portfolio/">
-  <meta property="og:image" content="https://florro68.github.io/felix-portfolio/hero-home-1200.jpg">
+  <!-- FIXED: use the new OG image in /assets -->
+  <meta property="og:image" content="https://florro68.github.io/felix-portfolio/assets/og-image-1200x630.png">
+  <meta property="og:image:alt" content="Photography by Felix I. Flores">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter (added) -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Felix I. Flores – Photography Portfolio">
+  <meta name="twitter:description" content="Intent, stillness, story — wild horses, UK quiet, waterfalls, seascapes.">
+  <meta name="twitter:image" content="https://florro68.github.io/felix-portfolio/assets/og-image-1200x630.png">
 
   <!-- Performance: preload hero -->
   <link rel="preload" as="image"
@@ -97,10 +105,6 @@
       min-height: calc(100vh - var(--nav-height) - 20px);
     }
     .section.active { display: block; }
-
-    /* Force-hide non-active sections */
-    .section { display: none !important; }
-    .section.active { display: block !important; }
 
     /* Clean background for all non-Home pages */
     .section:not(#home) {
