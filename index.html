@@ -1,4 +1,4 @@
-<!-- rebuild: spa-fixes + blog-3posts (single hero preload) -->
+<!-- rebuild: spa-fixes + blog-3posts (no inline onclick) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,13 @@
   <meta name="twitter:image" content="https://florro68.github.io/felix-portfolio/assets/og-image-1200x630.png" />
 
   <!-- Preload hero -->
-  <link rel="preload" as="image" href="hero-home-3200.jpg" imagesizes="100vw" />
+  <link
+    rel="preload"
+    as="image"
+    href="hero-home-1600.jpg"
+    imagesrcset="hero-home-1200.jpg 1200w, hero-home-1600.jpg 1600w, hero-home-2400.jpg 2400w, hero-home-3200.jpg 3200w"
+    imagesizes="100vw"
+  />
 
   <style>
     :root { --nav-height: 60px; }
@@ -120,8 +126,336 @@
   </style>
 </head>
 <body>
-  <!-- NAV + SECTIONS + BLOG + FOOTER remain unchanged -->
-  <!-- (Paste continues with your full file content exactly as before) -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#wildhorses">Wild Horses</a>
+    <a href="#ukquiet">UK Quiet</a>
+    <a href="#waterfalls">Waterfalls</a>
+    <a href="#seascapes">Seascapes</a>
+    <a href="#blog">Blog</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#contact">Contact</a>
+    <a href="https://flo-pic.picfair.com/" target="_blank" rel="noopener">Picfair Shop</a>
+    <a href="https://instagram.com/felixfloresphoto/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+
+  <!-- HOME -->
+  <div id="home" class="section active">
+    <h1>Felix I. Flores – Photography Portfolio</h1>
+    <p>Hello and welcome to my site. I am Felix, a photographer, observer, and storyteller. My work has changed. I no longer just take photos. I create them with purpose, patience, and presence. I have grown in technique, but more importantly, I have learned to see. To slow down. To frame not just what is there, but what it means. Each image now reflects more than a moment. It reflects intent. Stillness. Story. This portfolio marks that shift. It is not just about what I saw. It is about how I chose to show it. This is where my craft became a voice.</p>
+    <p class="no-gatekeepers">No GateKeepers</p>
+  </div>
+
+  <!-- WILD HORSES -->
+  <div id="wildhorses" class="section">
+    <h2>Wild Horses</h2>
+    <p class="image-container">
+      Wild horses move with purpose. I photograph the hierarchy—who leads, who yields, who protects.
+      I wait for brief calm and small gestures. I work low with clean backgrounds and build one image at a time.
+    </p>
+    <div class="gallery">
+      <img src="wild-horses/wild1.jpg" alt="Wild Horse 1" width="800" height="533" loading="lazy" decoding="async">
+      <img src="wild-horses/wild2.jpg" alt="Wild Horse 2" width="800" height="533" loading="lazy" decoding="async">
+      <img src="wild-horses/wild3.jpg" alt="Wild Horse 3" width="800" height="533" loading="lazy" decoding="async">
+      <img src="wild-horses/wild4.jpg" alt="Wild Horse 4" width="800" height="533" loading="lazy" decoding="async">
+      <img src="wild-horses/wild5.jpg" alt="Wild Horse 5" width="800" height="533" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- UK QUIET -->
+  <div id="ukquiet" class="section">
+    <h2>UK Quiet</h2>
+    <p class="image-container">
+      Places where noise drops and detail matters. I arrive early when streets breathe and settle.
+      I build frames from edges, lines, and shadow. Color stays modest so structure can speak.
+    </p>
+    <div class="gallery">
+      <img src="uk-quiet/uk1.jpg" alt="UK Quiet 1" width="800" height="533" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk2.jpg" alt="UK Quiet 2" width="800" height="533" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk3.jpg" alt="UK Quiet 3" width="800" height="533" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk4.jpg" alt="UK Quiet 4" width="800" height="533" loading="lazy" decoding="async">
+      <img src="uk-quiet/uk5.jpg" alt="UK Quiet 5" width="800" height="533" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- WATERFALLS -->
+  <div id="waterfalls" class="section">
+    <h2>Waterfalls</h2>
+    <p class="image-container">
+      I balance motion with texture. Foam lines guide the eye through the frame.
+      I guard wet rock highlights and deep shadows. Soft light, steady footing, deliberate timing.
+    </p>
+    <div class="gallery">
+      <img src="waterfalls/waterfall1.jpg" alt="Waterfall 1" width="800" height="533" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall2.jpg" alt="Waterfall 2" width="800" height="533" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall3.jpg" alt="Waterfall 3" width="800" height="533" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall4.jpg" alt="Waterfall 4" width="800" height="533" loading="lazy" decoding="async">
+      <img src="waterfalls/waterfall5.jpg" alt="Waterfall 5" width="800" height="533" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- SEASCAPES -->
+  <div id="seascapes" class="section">
+    <h2>Seascapes</h2>
+    <p class="image-container">
+      I reduce the scene to horizon, shape, and tone. I wait for weather windows, not landmarks.
+      Few elements, room to breathe, quiet color. Exact horizons; time smooths the water.
+    </p>
+    <div class="gallery">
+      <img src="seascapes/seascape1.jpg" alt="Seascape 1" width="800" height="533" loading="lazy" decoding="async">
+      <img src="seascapes/seascape2.jpg" alt="Seascape 2" width="800" height="533" loading="lazy" decoding="async">
+      <img src="seascapes/seascape3.jpg" alt="Seascape 3" width="800" height="533" loading="lazy" decoding="async">
+      <img src="seascapes/seascape4.jpg" alt="Seascape 4" width="800" height="533" loading="lazy" decoding="async">
+      <img src="seascapes/seascape5.jpg" alt="Seascape 5" width="800" height="533" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <!-- BLOG -->
+  <div id="blog" class="section">
+    <h2>Blog</h2>
+    <div class="posts">
+      <div id="blog-list"></div>
+      <div id="blog-post" style="display:none;">
+        <p><a class="linklike" href="#blog">← Back to all posts</a></p>
+        <article>
+          <h2 id="post-title"></h2>
+          <p class="post-meta" id="post-meta"></p>
+          <div class="post-body" id="post-body"></div>
+        </article>
+        <p><a class="linklike" href="#blog">Back to all posts</a></p>
+      </div>
+      <p><a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener" class="soft-link">Read my articles on 35mmc →</a></p>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div id="newsletter" class="section">
+    <h2>Newsletter</h2>
+    <div class="image-container">
+      <p>To subscribe, email me at <a href="mailto:fifr68@proton.me?subject=Newsletter%20Signup" class="soft-link">fifr68@proton.me</a> with the subject “Newsletter Signup”.</p>
+      <p>You’ll get field notes, new work, and print updates.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p class="image-container">You can reach me at <strong><a href="mailto:fifr68@proton.me" class="soft-link">fifr68@proton.me</a></strong>.</p>
+    <p class="image-container">Prefer updates? Go to <a href="#newsletter" class="soft-link">Newsletter →</a></p>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <img src="" alt="Enlarged photo">
+  </div>
+
+  <noscript>
+    <div style="margin: calc(var(--nav-height) + 20px) 20px; background:#222; padding:12px; border-radius:8px;">
+      This site needs JavaScript enabled to show sections and blog posts.
+    </div>
+  </noscript>
+
+  <script>
+    // ---------- SPA NAV ----------
+    function setNavState(id) {
+      document.querySelectorAll('nav a').forEach(a => a.removeAttribute('aria-current'));
+      const link = document.querySelector('nav a[href="#' + id + '"]');
+      if (link) link.setAttribute('aria-current', 'page');
+    }
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => {
+        const active = (s.id === id);
+        s.classList.toggle('active', active);
+        s.hidden = !active;
+      });
+      if (typeof closeLightbox === 'function') closeLightbox();
+      history.replaceState(null, '', '#' + id);
+      setNavState(id);
+      window.scrollTo(0, 0);
+    }
+
+    function routeFromHash() {
+      const hash = window.location.hash || '#home';
+      if (hash.startsWith('#post/')) {
+        const slug = decodeURIComponent(hash.replace('#post/', ''));
+        openPost(slug);
+        return;
+      }
+      const id = hash.substring(1);
+      if (id === 'blog') { openBlog(); return; }
+      if (document.getElementById(id)) { showSection(id); } else { showSection('home'); }
+    }
+
+    // ---------- Lightbox ----------
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    function bindLightbox() {
+      document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.currentSrc || img.src;
+          lightbox.style.display = 'flex';
+          lightbox.setAttribute('aria-hidden', 'false');
+          lightbox.focus();
+        });
+      });
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    // ---------- Blog Data & Rendering ----------
+    const POSTS = [
+      {
+        slug: "wild-horses-field-rules",
+        title: "Wild Horses: Field Rules for a Keeper Image",
+        date: "2025-09-16",
+        tags: ["wild horses", "fieldcraft", "exposure"],
+        excerpt: "Seven hard-won rules from the field — angle, belonging, and exposure discipline separate a keeper from a snapshot.",
+        body: `
+          <p>Wild horses are not props. They live by rules of hierarchy, space, and constant alertness.
+          If you walk in blind, they will know. If you take shortcuts, the frame will show it.
+          After years in the field, I built seven rules that give me one keeper out of thirty tries — and that’s a good day.</p>
+
+          <h3>1) Story first</h3>
+          <ul>
+            <li>Ask: what is this frame saying? Dominance, calm, challenge, or nurture?</li>
+            <li>Do not press the shutter until you can answer that in words.</li>
+          </ul>
+
+          <h3>2) Angle over access</h3>
+          <ul>
+            <li>Angle separates a wow image from a snapshot.</li>
+            <li>Stay low, work edges, avoid cluttered backgrounds. A two–step shift often changes the entire story.</li>
+          </ul>
+
+          <h3>3) Manage light first</h3>
+          <ul>
+            <li>Shoot manual with Auto ISO — lock shutter and aperture, let ISO float with light.</li>
+            <li>Use exposure compensation to guard highlights. Light can make or ruin an image in one step.</li>
+            <li>Field setup: 1/1000–1/2000 s, f/4–f/5.6, Auto ISO capped to your sensor tolerance.</li>
+          </ul>
+
+          <h3>4) Observe until you belong</h3>
+          <ul>
+            <li>Do not chase. Wait until the herd accepts you as part of the background.</li>
+            <li>Only then will micro-gestures and social moments unfold naturally.</li>
+          </ul>
+
+          <h3>5) One image at a time</h3>
+          <ul>
+            <li>I no longer spray. I build one image: timing, gesture, background, light.</li>
+            <li>If it works, I move. If it fails, I reset.</li>
+          </ul>
+
+          <h3>6) Micro-gestures are the story</h3>
+          <ul>
+            <li>Watch ears tilt, neck stretch, a foal glance back — these show hierarchy and bond.</li>
+            <li>Power is not only in rearing; it’s in the small signs of order and care.</li>
+          </ul>
+
+          <h3>7) Checklist + post</h3>
+          <ul>
+            <li>Before leaving: clean background, correct angle, light safe, story clear.</li>
+            <li>Post: respect tones, no fake drama. Clarity local, not global. Grain over plastic smoothness.</li>
+          </ul>
+
+          <p>These rules are not shortcuts. They are limits I accept in order to get one frame that speaks.
+          And one frame is enough if it holds story, belonging, and intent.</p>
+        `
+      },
+      {
+        slug: "why-i-create-not-just-capture",
+        title: "Why I Create, Not Just Capture",
+        date: "2025-08-16",
+        tags: ["process", "craft"],
+        excerpt: "How slowing down and shooting with intention changed my work.",
+        body: `
+          <p>I stopped chasing volume. I started building photographs. That shift demanded patience, fewer frames, and clearer intent.</p>
+          <p>In this post, I break down the field routine I use now: pre-visualize, commit to a sequence, and protect the quiet. The result: fewer images, stronger stories.</p>
+          <h3>What changed</h3>
+          <ul>
+            <li>From “get the shot” to <strong>build the shot</strong>.</li>
+            <li>From reaction to <strong>preparation</strong>.</li>
+            <li>From noise to <strong>quiet</strong>.</li>
+          </ul>
+        `
+      },
+      {
+        slug: "waterfalls-notes-light-and-texture",
+        title: "Waterfalls: Notes on Light and Texture",
+        date: "2025-08-16",
+        tags: ["waterfalls", "technique"],
+        excerpt: "Practical settings and field habits to control motion without losing texture.",
+        body: `
+          <p>Silky water is easy. Keeping <em>texture</em> is harder. I work between 1/5–1/2 s when flow is moderate, and I bracket to keep options.</p>
+          <p>Key moves: control micro-shake with a firm stance, use a 2-second delay, and watch the highlights on wet rock—protect them.</p>
+          <p>Post: gentle contrast, guard the blacks, add local clarity to the foam edges—never the whole frame.</p>
+        `
+      }
+    ];
+
+    function formatDate(iso) {
+      const d = new Date(iso.replace(/-/g,'/'));
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+    }
+
+    function openBlog() {
+      const list = document.getElementById('blog-list');
+      const postView = document.getElementById('blog-post');
+      postView.style.display = 'none';
+      list.innerHTML = '';
+
+      POSTS
+        .slice()
+        .sort((a,b) => b.date.localeCompare(a.date))
+        .forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'post-card';
+          card.innerHTML = `
+            <h3><a class="linklike" href="#post/${encodeURIComponent(post.slug)}">${post.title}</a></h3>
+            <div class="post-meta">${formatDate(post.date)} · ${post.tags.join(', ')}</div>
+            <p>${post.excerpt}</p>
+            <p><a class="linklike" href="#post/${encodeURIComponent(post.slug)}">Read more →</a></p>
+          `;
+          list.appendChild(card);
+        });
+
+      document.getElementById('blog-list').style.display = '';
+      showSection('blog');
+    }
+
+    function openPost(slug) {
+      const post = POSTS.find(p => p.slug === slug);
+      if (!post) { history.replaceState(null, '', '#blog'); openBlog(); return; }
+
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-meta').textContent = `${formatDate(post.date)} · ${post.tags.join(', ')}`;
+      document.getElementById('post-body').innerHTML = post.body;
+
+      document.getElementById('blog-list').style.display = 'none';
+      document.getElementById('blog-post').style.display = '';
+
+      showSection('blog');
+      history.replaceState(null, '', '#post/' + encodeURIComponent(slug));
+    }
+
+    // Init after DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      bindLightbox();
+      routeFromHash();
+    });
+    window.addEventListener('hashchange', routeFromHash);
+
+    // Escape closes lightbox
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    // Click closes lightbox
+    lightbox.addEventListener('click', closeLightbox);
+  </script>
 
   <!-- Footer -->
   <footer style="padding:16px 20px; color:#bbb; background:#111; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;">
