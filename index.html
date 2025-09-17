@@ -27,8 +27,14 @@
   <meta name="twitter:description" content="Intent, stillness, story — wild horses, UK quiet, waterfalls, seascapes." />
   <meta name="twitter:image" content="https://florro68.github.io/felix-portfolio/assets/og-image-1200x630.png" />
 
-  <!-- Preload hero (fixed: only 3200px available) -->
-  <link rel="preload" as="image" href="hero-home-3200.jpg" />
+  <!-- Preload hero -->
+  <link
+    rel="preload"
+    as="image"
+    href="hero-home-1600.jpg"
+    imagesrcset="hero-home-1200.jpg 1200w, hero-home-1600.jpg 1600w, hero-home-2400.jpg 2400w, hero-home-3200.jpg 3200w"
+    imagesizes="100vw"
+  />
 
   <style>
     :root { --nav-height: 60px; }
@@ -120,7 +126,6 @@
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
   <nav>
     <a href="#home">Home</a>
     <a href="#wildhorses">Wild Horses</a>
@@ -308,4 +313,159 @@
       {
         slug: "wild-horses-field-rules",
         title: "Wild Horses: Field Rules for a Keeper Image",
-       
+        date: "2025-09-16",
+        tags: ["wild horses", "fieldcraft", "exposure"],
+        excerpt: "Seven hard-won rules from the field — angle, belonging, and exposure discipline separate a keeper from a snapshot.",
+        body: `
+          <p>Wild horses are not props. They live by rules of hierarchy, space, and constant alertness.
+          If you walk in blind, they will know. If you take shortcuts, the frame will show it.
+          After years in the field, I built seven rules that give me one keeper out of thirty tries — and that’s a good day.</p>
+
+          <h3>1) Story first</h3>
+          <ul>
+            <li>Ask: what is this frame saying? Dominance, calm, challenge, or nurture?</li>
+            <li>Do not press the shutter until you can answer that in words.</li>
+          </ul>
+
+          <h3>2) Angle over access</h3>
+          <ul>
+            <li>Angle separates a wow image from a snapshot.</li>
+            <li>Stay low, work edges, avoid cluttered backgrounds. A two–step shift often changes the entire story.</li>
+          </ul>
+
+          <h3>3) Manage light first</h3>
+          <ul>
+            <li>Shoot manual with Auto ISO — lock shutter and aperture, let ISO float with light.</li>
+            <li>Use exposure compensation to guard highlights. Light can make or ruin an image in one step.</li>
+            <li>Field setup: 1/1000–1/2000 s, f/4–f/5.6, Auto ISO capped to your sensor tolerance.</li>
+          </ul>
+
+          <h3>4) Observe until you belong</h3>
+          <ul>
+            <li>Do not chase. Wait until the herd accepts you as part of the background.</li>
+            <li>Only then will micro-gestures and social moments unfold naturally.</li>
+          </ul>
+
+          <h3>5) One image at a time</h3>
+          <ul>
+            <li>I no longer spray. I build one image: timing, gesture, background, light.</li>
+            <li>If it works, I move. If it fails, I reset.</li>
+          </ul>
+
+          <h3>6) Micro-gestures are the story</h3>
+          <ul>
+            <li>Watch ears tilt, neck stretch, a foal glance back — these show hierarchy and bond.</li>
+            <li>Power is not only in rearing; it’s in the small signs of order and care.</li>
+          </ul>
+
+          <h3>7) Checklist + post</h3>
+          <ul>
+            <li>Before leaving: clean background, correct angle, light safe, story clear.</li>
+            <li>Post: respect tones, no fake drama. Clarity local, not global. Grain over plastic smoothness.</li>
+          </ul>
+
+          <p>These rules are not shortcuts. They are limits I accept in order to get one frame that speaks.
+          And one frame is enough if it holds story, belonging, and intent.</p>
+        `
+      },
+      {
+        slug: "why-i-create-not-just-capture",
+        title: "Why I Create, Not Just Capture",
+        date: "2025-08-16",
+        tags: ["process", "craft"],
+        excerpt: "How slowing down and shooting with intention changed my work.",
+        body: `
+          <p>I stopped chasing volume. I started building photographs. That shift demanded patience, fewer frames, and clearer intent.</p>
+          <p>In this post, I break down the field routine I use now: pre-visualize, commit to a sequence, and protect the quiet. The result: fewer images, stronger stories.</p>
+          <h3>What changed</h3>
+          <ul>
+            <li>From “get the shot” to <strong>build the shot</strong>.</li>
+            <li>From reaction to <strong>preparation</strong>.</li>
+            <li>From noise to <strong>quiet</strong>.</li>
+          </ul>
+        `
+      },
+      {
+        slug: "waterfalls-notes-light-and-texture",
+        title: "Waterfalls: Notes on Light and Texture",
+        date: "2025-08-16",
+        tags: ["waterfalls", "technique"],
+        excerpt: "Practical settings and field habits to control motion without losing texture.",
+        body: `
+          <p>Silky water is easy. Keeping <em>texture</em> is harder. I work between 1/5–1/2 s when flow is moderate, and I bracket to keep options.</p>
+          <p>Key moves: control micro-shake with a firm stance, use a 2-second delay, and watch the highlights on wet rock—protect them.</p>
+          <p>Post: gentle contrast, guard the blacks, add local clarity to the foam edges—never the whole frame.</p>
+        `
+      }
+    ];
+
+    function formatDate(iso) {
+      const d = new Date(iso.replace(/-/g,'/'));
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+    }
+
+    function openBlog() {
+      const list = document.getElementById('blog-list');
+      const postView = document.getElementById('blog-post');
+      postView.style.display = 'none';
+      list.innerHTML = '';
+
+      POSTS
+        .slice()
+        .sort((a,b) => b.date.localeCompare(a.date))
+        .forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'post-card';
+          card.innerHTML = `
+            <h3><a class="linklike" href="#post/${encodeURIComponent(post.slug)}">${post.title}</a></h3>
+            <div class="post-meta">${formatDate(post.date)} · ${post.tags.join(', ')}</div>
+            <p>${post.excerpt}</p>
+            <p><a class="linklike" href="#post/${encodeURIComponent(post.slug)}">Read more →</a></p>
+          `;
+          list.appendChild(card);
+        });
+
+      document.getElementById('blog-list').style.display = '';
+      showSection('blog');
+    }
+
+    function openPost(slug) {
+      const post = POSTS.find(p => p.slug === slug);
+      if (!post) { history.replaceState(null, '', '#blog'); openBlog(); return; }
+
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-meta').textContent = `${formatDate(post.date)} · ${post.tags.join(', ')}`;
+      document.getElementById('post-body').innerHTML = post.body;
+
+      document.getElementById('blog-list').style.display = 'none';
+      document.getElementById('blog-post').style.display = '';
+
+      showSection('blog');
+      history.replaceState(null, '', '#post/' + encodeURIComponent(slug));
+    }
+
+    // Init after DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      bindLightbox();
+      routeFromHash();
+    });
+    window.addEventListener('hashchange', routeFromHash);
+
+    // Escape closes lightbox
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    // Click closes lightbox
+    lightbox.addEventListener('click', closeLightbox);
+  </script>
+
+  <!-- Footer -->
+  <footer style="padding:16px 20px; color:#bbb; background:#111; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;">
+    <span>© <span id="y"></span> Felix I. Flores — <a href="mailto:fifr68@proton.me" style="color:#bbb;">fifr68@proton.me</a></span>
+    <span style="display:flex; gap:12px;">
+      <a href="https://flo-pic.picfair.com/" target="_blank" rel="noopener" style="color:#bbb;">Picfair</a>
+      <a href="https://instagram.com/felixfloresphoto/" target="_blank" rel="noopener" style="color:#bbb;">Instagram</a>
+      <a href="https://www.35mmc.com/author/florro68/" target="_blank" rel="noopener" style="color:#bbb;">35mmc</a>
+    </span>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
